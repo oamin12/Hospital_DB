@@ -6,7 +6,7 @@ Go
 use DB_Project_Hospital
 ------------Table Creation-----------------
 
-create table Person
+create table PersonData
 (
 FName varchar(50) not null,
 LName varchar(50) not null,
@@ -16,18 +16,6 @@ BoD date,
 gender char(1) 
 )
 
-create table Users
-(
-ID int,
-primary key (ID),
-passwords char(60),
-PersonID int not null,
-Username varchar(50) not null,
-UserTypeID int,
-foreign key (PersonID) references Person,
-foreign key (UserTypeID) references UserType
-)
-
 create table Usertype
 (
 Tname varchar(50) not null,
@@ -35,6 +23,27 @@ ID int,
 primary key (ID)
 )
 
+
+create table Users
+(
+ID int,
+primary key (ID),
+passwords char(60),
+PersonID int not null,
+Username varchar(50) not null,
+UserTypeID int not null,
+foreign key (PersonID) references PersonData,
+foreign key (UserTypeID) references Usertype
+)
+
+create table Department
+(
+DepID int,
+primary key (DepID),
+DepName varchar(50) not null,
+DepHead int,
+--foreign key (DepHead) references Doctors
+)
 create table Doctors
 (
 ID int,
@@ -45,8 +54,7 @@ SuperID int,
 PersonID int not null,
 Foreign key  (DepID) references Department,
 Foreign key  (SuperID) references Doctors,
-Foreign key  (PersonID) references Person,
-
+Foreign key  (PersonID) references PersonData,
 )
 
 create table Nurse
@@ -56,30 +64,24 @@ primary key (ID),
 salary int not null,
 PersonID int not null,
 SuperID int ,
-Foreign key  (PersonID) references Person,
+Foreign key  (PersonID) references PersonData,
 Foreign key  (SuperID) references Nurse,
 )
 
 --is the nurse supervisor nurse as well ??
 
-create table Department
-(
-DepID int,
-primary key (DepID),
-DepName varchar(50) not null,
-DepHead int,
-foreign key (DepHead) references Doctors
-)
 ---trans needs logic
-create table transactions
+create table Patient
 (
-Ttype varchar(50) not null,
-Payment int,
---Istallments int, 3ayzeen nebos 3aleeha tany
 ID int,
-requestID int,
 primary key (ID),
-foreign key (requestID) references Requests
+PersonID int not null,
+BloodType char(4),
+--Allergies varchar(50),
+--Diseases varchar(100),
+ResDrID int,--responsible Doctor
+foreign key (PersonID) references PersonData,
+foreign key (ResDrID) references Doctors
 )
 
 create table Room
@@ -94,18 +96,6 @@ Foreign key  (ResposibleNurseID) references Nurse,
 Foreign key  (PatientID) references Patient
 )
 
-create table Patient
-(
-ID int,
-primary key (ID),
-PesronID int,
-BloodType char(4),
---Allergies varchar(50),
---Diseases varchar(100),
-ResDrID int,--responsible Doctor
-foreign key (PersonID) references Person,
-foreign key (ResDrID) references Doctors
-)
 
 create table EmployeeType
 (
@@ -122,7 +112,7 @@ PersonID int,
 EmployeeTypeID int,
 Salary int not null,
 DepartmentID int,
-foreign key (PersonID) references Person,
+foreign key (PersonID) references PersonData,
 foreign key (EmployeeTypeID) references EmployeeType,
 foreign key (DepartmentID) references Department --added 15/12
 )
@@ -143,6 +133,13 @@ SType varchar(50) not null,
 Price int not null,
 --- DIDN'T ADD PATIENT ID AS in ER 3ashan mesh moqtane3 beeha hena
 --- should be fy relation has a scan i guess wala eh ?
+)
+
+create table OperationRoom
+(
+ID int,
+primary key (ID),
+RoomNumber int,
 )
 
 
@@ -166,12 +163,6 @@ foreign key (Olocation) references OperationRoom
 )
 
 
-create table OperationRoom
-(
-ID int,
-primary key (ID),
-RoomNumber int,
-)
 --------------------------------------------------------------
 --------------------------------------------------------------
 create table Nurses_Operations
@@ -201,18 +192,29 @@ create table requests
 (
 RequestID int,
 primary key (RequestID),
-primary key (RequestID),
 RequestType varchar(50),
 Accepted char(1),
 DrID int,
 foreign key (DrID) references Doctors
 )
 
+create table transactions
+(
+Ttype varchar(50) not null,
+Payment int,
+--Istallments int, 3ayzeen nebos 3aleeha tany
+ID int,
+requestID int,
+primary key (ID),
+foreign key (requestID) references Requests
+)
+
+
 create table GetsPaid
 (
 PersonID int,
 TransactionID int,
-foreign key (PersonID) references Person,
+foreign key (PersonID) references PersonData,
 foreign key (TransactionID) references Transactions
 )
 
@@ -235,8 +237,11 @@ Atype varchar(50),
 primary key (PatientID,DrID,Date_time),
 foreign key (PatientID) references Patient,
 foreign key (DrID) references Doctors
-
 )
+-----------------adding foreign key for department--------
+alter table Department add foreign key (DepHead) references Doctors
+
+
 
 ----tables to be added-------
 -----Nurses and Operation table
