@@ -69,7 +69,7 @@ Foreign key  (SuperID) references Nurse,
 )
 
 --is the nurse supervisor nurse as well ??
-
+-- fen el name ya shbab
 ---trans needs logic
 create table Patient
 (

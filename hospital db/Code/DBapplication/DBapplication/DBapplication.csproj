@@ -62,6 +62,30 @@
     <Compile Include="DocSchedule.Designer.cs">
       <DependentUpon>DocSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="look_Up_page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="look_Up_page.Designer.cs">
+      <DependentUpon>look_Up_page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient_page.Designer.cs">
+      <DependentUpon>Patient_page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reception.Designer.cs">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations_page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reservations_page.Designer.cs">
+      <DependentUpon>Reservations_page.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +99,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DocSchedule.resx">
       <DependentUpon>DocSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="look_Up_page.resx">
+      <DependentUpon>look_Up_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient_page.resx">
+      <DependentUpon>Patient_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception.resx">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations_page.resx">
+      <DependentUpon>Reservations_page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
