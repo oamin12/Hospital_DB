@@ -10,7 +10,7 @@ create table PersonData
 (
 FName varchar(50) not null,
 LName varchar(50) not null,
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 BoD date,
 gender char(1) 
@@ -19,14 +19,14 @@ gender char(1)
 create table Usertype
 (
 Tname varchar(50) not null,
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID)
 )
 
 
 create table Users
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 passwords char(60),
 PersonID int not null,
@@ -38,7 +38,7 @@ foreign key (UserTypeID) references Usertype
 
 create table Department
 (
-DepID int,
+DepID int IDENTITY(1,1),
 primary key (DepID),
 DepName varchar(50) not null,
 DepHead int,
@@ -46,7 +46,7 @@ DepHead int,
 )
 create table Doctors
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 Salary int not null,
 DepID int not null,
@@ -59,7 +59,7 @@ Foreign key  (PersonID) references PersonData,
 
 create table Nurse
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 salary int not null,
 PersonID int not null,
@@ -73,7 +73,7 @@ Foreign key  (SuperID) references Nurse,
 ---trans needs logic
 create table Patient
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 PersonID int not null,
 BloodType char(4),
@@ -86,7 +86,7 @@ foreign key (ResDrID) references Doctors
 
 create table Room
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 ResposibleNurseID int,
 PatientID int,
@@ -99,14 +99,14 @@ Foreign key  (PatientID) references Patient
 
 create table EmployeeType
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 Tname varchar(20)
 )
 
 create table Employee
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 PersonID int,
 EmployeeTypeID int,
@@ -120,13 +120,13 @@ foreign key (DepartmentID) references Department --added 15/12
 create table OperationType
 (
 Oname varchar(60) not null,
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID)
 )
 
 create table ScanLab
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 ----Stype varchar
 SType varchar(50) not null,
@@ -137,7 +137,7 @@ Price int not null,
 
 create table OperationRoom
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 RoomNumber int,
 )
@@ -145,7 +145,7 @@ RoomNumber int,
 
 create table operations
 (
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID),
 ---operation rooom mesh ma3moola entity aslan, ha3melha ta7t!!!
 OLocation int not null,
@@ -190,12 +190,17 @@ foreign key (patientID) references Patient
 
 create table requests
 (
-RequestID int,
-primary key (RequestID),
-RequestType varchar(50),
-Accepted char(1),
-DrID int,
-foreign key (DrID) references Doctors
+ID int IDENTITY(1,1),
+primary key (ID),
+Accepted bit default 0,
+DoctorID int,
+foreign key (DoctorID) references Doctors,
+RoomID int,
+foreign key (RoomID) references Room,
+PatientID int,
+foreign key (PatientID) references Patient,
+ScanID int,
+foreign key (ScanID) references ScanLab,
 )
 
 create table transactions

@@ -143,6 +143,48 @@ namespace DBapplication
             string query = $"SELECT COUNT() FROM ;";
             return (int)dbMan.ExecuteScalar(query);
         }
+        //public int InsertSupplier(string snum, string sname, string city, int status)
+        //{
+        //    string query = "INSERT INTO S (S#, Name, City, Status) " +
+        //                    "Values ('" + snum + "','" + sname + "','" + city + "'," + status + ");";
+        //    return dbMan.ExecuteNonQuery(query);
+        //}
+
+        //public int DeleteSupplier(string snum)
+        //{
+        //    string query = "DELETE FROM S WHERE S#='" + snum + "';";
+        //    return dbMan.ExecuteNonQuery(query);
+        //}
+
+        //public int UpdateSupplier(string snum, string city)
+        //{
+        //    string query = "UPDATE S SET City='" + city + "' WHERE S#='" + snum + "';";
+        //    return dbMan.ExecuteNonQuery(query);
+        //}
+
+        //public DataTable SelectAllSuppliers()
+        //{
+        //    string query = "SELECT * FROM S;";
+        //    return dbMan.ExecuteReader(query);
+        //}
+
+        //public int CountSuppliers()
+        //{
+        //    string query = "SELECT COUNT(S#) FROM S;";
+        //    return (int)dbMan.ExecuteScalar(query);
+        //}
+
+        public DataTable SelectPatients()
+        {
+            string query = $"SELECT PD.ID, CONCAT(FName, ' ', LName) AS FName FROM PersonData PD, Patient P WHERE PD.ID=P.PersonId ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int ReserveRoom( int roomID, int patientId, bool accepted = false )
+        {
+            string query = $"Insert into requests( Accepted, RoomID,PatientID) Values ({accepted}, {roomID}, {patientId})";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public void TerminateConnection()
         {

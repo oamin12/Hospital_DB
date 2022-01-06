@@ -29,133 +29,137 @@ namespace DBapplication
         /// </summary>
         private void InitializeComponent()
         {
+            this.ChooseResTypePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Reserve_bed = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.FollowUpsButton = new System.Windows.Forms.Button();
+            this.CheckUpsButton = new System.Windows.Forms.Button();
+            this.SurgeriesButton = new System.Windows.Forms.Button();
+            this.ScansButton = new System.Windows.Forms.Button();
+            this.BedsButton = new System.Windows.Forms.Button();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ChooseResTypePanel
+            // 
+            this.ChooseResTypePanel.Location = new System.Drawing.Point(145, 54);
+            this.ChooseResTypePanel.Name = "ChooseResTypePanel";
+            this.ChooseResTypePanel.Size = new System.Drawing.Size(910, 413);
+            this.ChooseResTypePanel.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.Reserve_bed);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 467);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(1055, 54);
+            this.panel1.TabIndex = 2;
             // 
-            // Reserve_bed
+            // panel3
             // 
-            this.Reserve_bed.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Reserve_bed.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.Reserve_bed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.Reserve_bed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.Reserve_bed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reserve_bed.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reserve_bed.Location = new System.Drawing.Point(0, 59);
-            this.Reserve_bed.Name = "Reserve_bed";
-            this.Reserve_bed.Size = new System.Drawing.Size(206, 48);
-            this.Reserve_bed.TabIndex = 0;
-            this.Reserve_bed.Text = "Reserve bed";
-            this.Reserve_bed.UseVisualStyleBackColor = false;
+            this.panel3.Controls.Add(this.BedsButton);
+            this.panel3.Controls.Add(this.ScansButton);
+            this.panel3.Controls.Add(this.SurgeriesButton);
+            this.panel3.Controls.Add(this.CheckUpsButton);
+            this.panel3.Controls.Add(this.FollowUpsButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 54);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(139, 413);
+            this.panel3.TabIndex = 3;
             // 
-            // button1
+            // FollowUpsButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 48);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Reserve Scans";
-            this.button1.UseVisualStyleBackColor = false;
+            this.FollowUpsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FollowUpsButton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.FollowUpsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FollowUpsButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FollowUpsButton.Location = new System.Drawing.Point(0, 311);
+            this.FollowUpsButton.Name = "FollowUpsButton";
+            this.FollowUpsButton.Size = new System.Drawing.Size(139, 66);
+            this.FollowUpsButton.TabIndex = 0;
+            this.FollowUpsButton.Text = "Follow Ups";
+            this.FollowUpsButton.UseVisualStyleBackColor = false;
+            this.FollowUpsButton.Click += new System.EventHandler(this.FollowUpsButton_Click);
             // 
-            // button2
+            // CheckUpsButton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 48);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Reserve follow up";
-            this.button2.UseVisualStyleBackColor = false;
+            this.CheckUpsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CheckUpsButton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.CheckUpsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CheckUpsButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckUpsButton.Location = new System.Drawing.Point(0, 239);
+            this.CheckUpsButton.Name = "CheckUpsButton";
+            this.CheckUpsButton.Size = new System.Drawing.Size(139, 66);
+            this.CheckUpsButton.TabIndex = 1;
+            this.CheckUpsButton.Text = "Check Ups";
+            this.CheckUpsButton.UseVisualStyleBackColor = false;
+            this.CheckUpsButton.Click += new System.EventHandler(this.CheckUpsButton_Click);
             // 
-            // button3
+            // SurgeriesButton
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 211);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 48);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Reserve surgeries";
-            this.button3.UseVisualStyleBackColor = false;
+            this.SurgeriesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.SurgeriesButton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.SurgeriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SurgeriesButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurgeriesButton.Location = new System.Drawing.Point(0, 167);
+            this.SurgeriesButton.Name = "SurgeriesButton";
+            this.SurgeriesButton.Size = new System.Drawing.Size(139, 66);
+            this.SurgeriesButton.TabIndex = 2;
+            this.SurgeriesButton.Text = "Surgeries";
+            this.SurgeriesButton.UseVisualStyleBackColor = false;
+            this.SurgeriesButton.Click += new System.EventHandler(this.SurgeriesButton_Click);
             // 
-            // button4
+            // ScansButton
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 287);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(206, 48);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Reserve check up";
-            this.button4.UseVisualStyleBackColor = false;
+            this.ScansButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScansButton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.ScansButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScansButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScansButton.Location = new System.Drawing.Point(0, 95);
+            this.ScansButton.Name = "ScansButton";
+            this.ScansButton.Size = new System.Drawing.Size(139, 66);
+            this.ScansButton.TabIndex = 3;
+            this.ScansButton.Text = "Scans";
+            this.ScansButton.UseVisualStyleBackColor = false;
+            this.ScansButton.Click += new System.EventHandler(this.ScansButton_Click);
             // 
-            // panel2
+            // BedsButton
             // 
-            this.panel2.Location = new System.Drawing.Point(206, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(849, 467);
-            this.panel2.TabIndex = 1;
+            this.BedsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BedsButton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.BedsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BedsButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BedsButton.Location = new System.Drawing.Point(0, 23);
+            this.BedsButton.Name = "BedsButton";
+            this.BedsButton.Size = new System.Drawing.Size(139, 66);
+            this.BedsButton.TabIndex = 4;
+            this.BedsButton.Text = "Beds";
+            this.BedsButton.UseVisualStyleBackColor = false;
+            this.BedsButton.Click += new System.EventHandler(this.BedsButton_Click);
             // 
             // Reservations_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ChooseResTypePanel);
             this.Name = "Reservations_page";
             this.Size = new System.Drawing.Size(1055, 467);
-            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Panel ChooseResTypePanel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Reserve_bed;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button BedsButton;
+        private System.Windows.Forms.Button ScansButton;
+        private System.Windows.Forms.Button SurgeriesButton;
+        private System.Windows.Forms.Button CheckUpsButton;
+        private System.Windows.Forms.Button FollowUpsButton;
     }
 }

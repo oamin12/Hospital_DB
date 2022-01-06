@@ -9,21 +9,11 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class look_Up_page : UserControl
+    public partial class ReserveFollowUp_UC : UserControl
     {
-        public look_Up_page()
+        public ReserveFollowUp_UC()
         {
             InitializeComponent();
-        }
-
-        private void look_Up_page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

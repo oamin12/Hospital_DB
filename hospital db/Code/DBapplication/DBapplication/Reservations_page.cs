@@ -14,6 +14,43 @@ namespace DBapplication
         public Reservations_page()
         {
             InitializeComponent();
+
+        }
+        private void AddUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            ChooseResTypePanel.Controls.Clear();
+            ChooseResTypePanel.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+        private void BedsButton_Click(object sender, EventArgs e)
+        {
+            ROOM_RES Rs = new ROOM_RES();
+            AddUserControl(Rs);
+        }
+
+        private void ScansButton_Click(object sender, EventArgs e)
+        {
+            Scan_Res SR = new Scan_Res();
+            AddUserControl(SR);
+        }
+
+        private void SurgeriesButton_Click(object sender, EventArgs e)
+        {
+            Surgery_Res Ss = new Surgery_Res();
+            AddUserControl(Ss);
+        }
+
+        private void CheckUpsButton_Click(object sender, EventArgs e)
+        {
+            ReserveCheckUP_UC checkUP_UC = new ReserveCheckUP_UC();
+            AddUserControl(checkUP_UC);
+        }
+
+        private void FollowUpsButton_Click(object sender, EventArgs e)
+        {
+            ReserveFollowUp_UC reserveFollowUp_UC = new ReserveFollowUp_UC();
+            AddUserControl(reserveFollowUp_UC);
         }
     }
 }

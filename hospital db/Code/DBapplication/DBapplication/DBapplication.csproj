@@ -116,6 +116,30 @@
     <Compile Include="Reservations_page.Designer.cs">
       <DependentUpon>Reservations_page.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReserveCheckUP_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReserveCheckUP_UC.Designer.cs">
+      <DependentUpon>ReserveCheckUP_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReserveFollowUp_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReserveFollowUp_UC.Designer.cs">
+      <DependentUpon>ReserveFollowUp_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ROOM_RES.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ROOM_RES.Designer.cs">
+      <DependentUpon>ROOM_RES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scan_Res.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scan_Res.Designer.cs">
+      <DependentUpon>Scan_Res.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +160,12 @@
     <EmbeddedResource Include="Add_Nurse.resx">
       <DependentUpon>Add_Nurse.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Surgery_Res.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Surgery_Res.Designer.cs">
+      <DependentUpon>Surgery_Res.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DocForm.resx">
       <DependentUpon>DocForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +187,18 @@
     <EmbeddedResource Include="Reservations_page.resx">
       <DependentUpon>Reservations_page.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReserveCheckUP_UC.resx">
+      <DependentUpon>ReserveCheckUP_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReserveFollowUp_UC.resx">
+      <DependentUpon>ReserveFollowUp_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ROOM_RES.resx">
+      <DependentUpon>ROOM_RES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scan_Res.resx">
+      <DependentUpon>Scan_Res.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +211,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Surgery_Res.resx">
+      <DependentUpon>Surgery_Res.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

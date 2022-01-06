@@ -9,19 +9,19 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class look_Up_page : UserControl
+    public partial class Surgery_Res : UserControl
     {
-        public look_Up_page()
+        public Surgery_Res()
         {
             InitializeComponent();
         }
 
-        private void look_Up_page_Load(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

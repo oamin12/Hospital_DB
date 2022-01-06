@@ -31,3 +31,8 @@ C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\De
 C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.look_Up_page.resources
 C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Patient_page.resources
 C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Reservations_page.resources
+C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.ROOM_RES.resources
+C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Scan_Res.resources
+C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Surgery_Res.resources
+C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.ReserveCheckUP_UC.resources
+C:\Users\NADA\Desktop\db\hospital db\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.ReserveFollowUp_UC.resources
