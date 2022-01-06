@@ -180,6 +180,12 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectAllRooms()
+        {
+            string query = $"SELECT ID from Room";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int ReserveRoom( int roomID, int patientId, bool accepted = false )
         {
             string query = $"Insert into requests( Accepted, RoomID,PatientID) Values ({accepted}, {roomID}, {patientId})";

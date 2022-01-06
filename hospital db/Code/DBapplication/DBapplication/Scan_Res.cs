@@ -20,5 +20,10 @@ namespace DBapplication
         {
 
         }
+
+        private void ReserveScanButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

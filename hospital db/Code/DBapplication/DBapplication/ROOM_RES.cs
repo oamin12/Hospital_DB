@@ -20,11 +20,16 @@ namespace DBapplication
             Patient_Pick_combobox.DataSource = PN;
             Patient_Pick_combobox.DisplayMember = "FName";
             Patient_Pick_combobox.ValueMember = "ID";
+
+            DataTable Rdt = controllerObj.SelectAllRooms();
+            RoomPick_Combobox.DataSource = Rdt;
+            RoomPick_Combobox.DisplayMember = "ID";
+
         }
 
         private void Reserve_bed_button_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.ReserveRoom(, Convert.ToInt32(Patient_Pick_combobox.Text));
+            int r = controllerObj.ReserveRoom(Convert.ToInt32(RoomPick_Combobox.Text), Convert.ToInt32(Patient_Pick_combobox.Text));
         }
     }
 }
