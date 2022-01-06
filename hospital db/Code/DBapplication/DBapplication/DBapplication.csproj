@@ -48,6 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add a Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add a Doctor.Designer.cs">
+      <DependentUpon>Add a Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add a User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add a User.Designer.cs">
+      <DependentUpon>Add a User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_employee.Designer.cs">
+      <DependentUpon>Add_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Nurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Nurse.Designer.cs">
+      <DependentUpon>Add_Nurse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="DocForm.cs">
@@ -61,6 +85,12 @@
     </Compile>
     <Compile Include="DocSchedule.Designer.cs">
       <DependentUpon>DocSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adminstration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminstration.Designer.cs">
+      <DependentUpon>Adminstration.cs</DependentUpon>
     </Compile>
     <Compile Include="look_Up_page.cs">
       <SubType>UserControl</SubType>
@@ -94,11 +124,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add a Doctor.resx">
+      <DependentUpon>Add a Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add a User.resx">
+      <DependentUpon>Add a User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_employee.resx">
+      <DependentUpon>Add_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Nurse.resx">
+      <DependentUpon>Add_Nurse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DocForm.resx">
       <DependentUpon>DocForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocSchedule.resx">
       <DependentUpon>DocSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adminstration.resx">
+      <DependentUpon>Adminstration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="look_Up_page.resx">
       <DependentUpon>look_Up_page.cs</DependentUpon>
