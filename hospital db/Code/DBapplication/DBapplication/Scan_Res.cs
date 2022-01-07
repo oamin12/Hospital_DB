@@ -27,8 +27,6 @@ namespace DBapplication
             PickScan_Combobox.DisplayMember = "SType";
             PickScan_Combobox.ValueMember = "ID";
 
-
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -38,7 +36,7 @@ namespace DBapplication
 
         private void ReserveScanButton_Click(object sender, EventArgs e)
         {
-            string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd hh':'ss tt");
             int r = controllerObj.RequestScan(Convert.ToInt32(PickScan_Combobox.Text),Convert.ToInt32(PickPatient_ComboBox.Text), theDate);
 
         }

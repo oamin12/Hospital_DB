@@ -180,6 +180,17 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectDoctors_Name_ID()
+        {
+            string query = "select D.ID, CONCAT(FName, ' ', LName) AS Fname from Person PD, Doctors D where PD.ID = D.ID";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectOperationType_ID()
+        {
+            string query = "select Oname, ID from OperationType";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectScanType()
         {
             string query = "SELECT ID, SType FROM ScanLab ";
@@ -189,6 +200,11 @@ namespace DBapplication
         {
             string query = $"SELECT ID from Room";
             return dbMan.ExecuteReader(query);
+        }
+
+        public int RequestSuregry()
+        {
+            return 0 //lesa hashof han3ml table wla eh
         }
 
         public int RequestScan(int scanID, int PatientID, string ScanDate, bool accepted = false)
