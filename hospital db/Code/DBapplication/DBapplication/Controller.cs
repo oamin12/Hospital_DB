@@ -180,15 +180,26 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectScanType()
+        {
+            string query = "SELECT ID, SType FROM ScanLab ";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectAllRooms()
         {
             string query = $"SELECT ID from Room";
             return dbMan.ExecuteReader(query);
         }
 
-        public int ReserveRoom( int roomID, int patientId, bool accepted = false )
+        public int RequestScan(int scanID, int PatientID, string ScanDate, bool accepted = false)
         {
-            string query = $"Insert into requests( Accepted, RoomID,PatientID) Values ({accepted}, {roomID}, {patientId})";
+            string query = $"Insert into request(Accepted, PatientID, ScanID, ScanDate) Values({accepted}, {PatientID},{ScanDate},{ScanDate})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int RequestRoom(int roomID, int patientId, bool accepted = false )
+        {
+            string query = $"Insert into requests(Accepted, RoomID,PatientID) Values ({accepted}, {roomID}, {patientId})";
             return dbMan.ExecuteNonQuery(query);
         }
 
