@@ -251,6 +251,7 @@ ScanID int,
 foreign key (ScanID) references ScanLab
 on delete no action
 on update no action,
+ScanDate DateTime
 
 )
 

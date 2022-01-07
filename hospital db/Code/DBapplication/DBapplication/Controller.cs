@@ -232,15 +232,42 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectDoctors_Name_ID()
+        {
+            string query = "select D.ID, CONCAT(FName, ' ', LName) AS Fname from Person PD, Doctors D where PD.ID = D.ID";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectOperationType_ID()
+        {
+            string query = "select Oname, ID from OperationType";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectScanType()
+        {
+            string query = "SELECT ID, SType FROM ScanLab ";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectAllRooms()
         {
             string query = $"SELECT ID from Room";
             return dbMan.ExecuteReader(query);
         }
 
-        public int ReserveRoom( int roomID, int patientId, bool accepted = false )
+        public int RequestSuregry()
         {
-            string query = $"Insert into requests( Accepted, RoomID,PatientID) Values ({accepted}, {roomID}, {patientId})";
+            return 0 //lesa hashof han3ml table wla eh
+        }
+
+        public int RequestScan(int scanID, int PatientID, string ScanDate, bool accepted = false)
+        {
+            string query = $"Insert into request(Accepted, PatientID, ScanID, ScanDate) Values({accepted}, {PatientID},{ScanDate},{ScanDate})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int RequestRoom(int roomID, int patientId, bool accepted = false )
+        {
+            string query = $"Insert into requests(Accepted, RoomID,PatientID) Values ({accepted}, {roomID}, {patientId})";
             return dbMan.ExecuteNonQuery(query);
         }
 
