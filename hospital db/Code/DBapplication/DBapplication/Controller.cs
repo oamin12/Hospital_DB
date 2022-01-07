@@ -76,6 +76,12 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int UpdateBloodType(int patid , string btype)
+        {
+            string query = "UPDATE Patient SET BloodType = '" +btype+ "' WHERE ID = "+ patid +";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         public DataTable Select()
         {
             string query = $"SELECT * FROM ;";
@@ -99,9 +105,55 @@ namespace DBapplication
             string query = $"SELECT Username FROM Users where passwords='{pass}' AND Username='{username}';";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectDocPatient_IDs(int docid)
+        {
+            string query = "SELECT ID FROM Patient Where ResDrID =  " + docid ;
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectPatientdata(int patid)
+        {
+            string query = "SELECT * FROM Patient Where ID =  " + patid;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectPatientPersondata(int patid)
+        {
+            string query = "SELECT * FROM Person Where ID =  " + patid;
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectPatientAllergies(int patid)
+        {
+            string query = "SELECT allergies FROM Patient_allergies Where patientID =  " + patid;
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectPatientDiseases(int patid)
+        {
+            string query = "SELECT Diseases FROM Patient_Diseases Where patientID =  " + patid;
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAppointmentsDates(int docid , int patid)
+        {
+            string query = "SELECT Date_time , Report FROM Appointment Where PatientID =  " + patid + " and DrID = "+ docid ;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectAppointmentReport(int docid, int patid , string app)
+        {
+            string query = "SELECT Report FROM Appointment Where PatientID =  " + patid + " and DrID = " + docid + " and Date_time = '" + app + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         public int getUserTypeID(string username)
         {
             string query = $"SELECT UserTypeID FROM Users where Username='{username}';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int getDocID(string username)
+        {
+            string query = "SELECT d.ID FROM Doctors as d , Users as u where u.PersonID = d.PersonID and Username = '" + username +"';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public DataTable SelectAllUserType()

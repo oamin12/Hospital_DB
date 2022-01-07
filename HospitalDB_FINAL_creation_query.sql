@@ -108,6 +108,7 @@ primary key (ID),
 ResposibleNurseID int,
 PatientID int,
 --size varchar dah tmam ?
+--ah
 Notes varchar(500),
 Foreign key  (ResposibleNurseID) references Nurse
 on delete set null
@@ -306,7 +307,7 @@ on update no action
 )
 -----------------adding foreign key for department--------
 alter table Department add foreign key (DepHead) references Doctors
-
+ALTER TABLE Appointment ADD Report varchar(500);
 
 
 ----tables to be added-------
