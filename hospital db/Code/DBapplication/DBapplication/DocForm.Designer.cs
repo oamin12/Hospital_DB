@@ -211,6 +211,7 @@
             this.Add_Disease_button.TabIndex = 21;
             this.Add_Disease_button.Text = "Add Disease";
             this.Add_Disease_button.UseVisualStyleBackColor = true;
+            this.Add_Disease_button.Click += new System.EventHandler(this.Add_Disease_button_Click);
             // 
             // Disease_combo
             // 
@@ -245,8 +246,7 @@
             this.pat_ID_combo.Name = "pat_ID_combo";
             this.pat_ID_combo.Size = new System.Drawing.Size(121, 24);
             this.pat_ID_combo.TabIndex = 22;
-            this.pat_ID_combo.DropDown += new System.EventHandler(this.Pat_ID_combo_SelectionChangeCommitted);
-            this.pat_ID_combo.SelectionChangeCommitted += new System.EventHandler(this.Pat_ID_combo_SelectionChangeCommitted);
+            this.pat_ID_combo.SelectedIndexChanged += new System.EventHandler(this.Pat_ID_combo_SelectionChangeCommitted);
             // 
             // Add_Allergy_textbox
             // 
@@ -264,6 +264,7 @@
             // 
             // Appointments_dates_combo
             // 
+            this.Appointments_dates_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Appointments_dates_combo.FormattingEnabled = true;
             this.Appointments_dates_combo.Location = new System.Drawing.Point(133, 54);
             this.Appointments_dates_combo.Name = "Appointments_dates_combo";

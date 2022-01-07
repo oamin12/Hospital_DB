@@ -64,6 +64,18 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int InsertAllergy(int patID , string allergy)
+        {
+            string query = $"INSERT INTO Patient_allergies Values ({patID},'{allergy}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertDisease(int patID, string Disease)
+        {
+            string query = $"INSERT INTO Patient_Diseases Values ({patID},'{Disease}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         public int Delete()
         {
             string query = $"DELETE FROM  WHERE ";
@@ -256,7 +268,7 @@ namespace DBapplication
 
         public int RequestSuregry()
         {
-            return 0 //lesa hashof han3ml table wla eh
+            return 0; //lesa hashof han3ml table wla eh
         }
 
         public int RequestScan(int scanID, int PatientID, string ScanDate, bool accepted = false)

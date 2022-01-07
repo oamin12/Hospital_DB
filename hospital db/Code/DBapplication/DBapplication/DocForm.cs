@@ -76,7 +76,7 @@ namespace DBapplication
         private void DocForm_Load(object sender, EventArgs e)
         {
             DataTable dt = controllerobj.SelectDocPatient_IDs(myID);
-  
+            
             pat_ID_combo.DataSource = dt;
             pat_ID_combo.DisplayMember = "ID";
             patblood.Text = "";
@@ -84,7 +84,12 @@ namespace DBapplication
             pat_lname.Text = "";
             pat_sex.Text = "";
             Pat_DOB.Text = "";
-            pat_ID_combo.Text = "";
+            pat_ID_combo.Text = null;
+            Appointments_dates_combo.Text = null;
+            pat_blood_combo.Text = null;
+           Allergies_combo.Text = null;
+            Disease_combo.Text = null;
+            reportbox.Text = "";
 
 
         }
@@ -100,12 +105,14 @@ namespace DBapplication
 
             //show bloodType & allergies
             DataTable dt = controllerobj.SelectPatientdata(patid);
+            if (dt == null) { return; }
             int.TryParse(dt.Rows[0][1].ToString(), out patpersonid);
             patblood.Text = dt.Rows[0][2].ToString();
 
             dt = controllerobj.SelectPatientAllergies(patid);
             Allergies_combo.DataSource = dt;
             Allergies_combo.DisplayMember = "allergies";
+
 
 
             dt = controllerobj.SelectPatientDiseases(patid);
@@ -154,6 +161,14 @@ namespace DBapplication
         {
             if (String.IsNullOrEmpty(pat_fname.Text)) { MessageBox.Show("No patient chosen!!"); return; }
             if (String.IsNullOrEmpty(Add_Allergy_textbox.Text)) { MessageBox.Show("No Allergy added!"); return; }
+            controllerobj.InsertAllergy(patid, Add_Allergy_textbox.Text);
+        }
+
+        private void Add_Disease_button_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(pat_fname.Text)) { MessageBox.Show("No patient chosen!!"); return; }
+            if (String.IsNullOrEmpty(Add_Disease_textbox.Text)) { MessageBox.Show("No Disease added!"); return; }
+            controllerobj.InsertDisease(patid, Add_Disease_textbox.Text);
         }
     }
 }

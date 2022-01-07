@@ -216,6 +216,7 @@ create table Patient_allergies
 (
 patientID int,
 allergies varchar(50),
+primary key (patientID,allergies),
 foreign key (patientID) references Patient
 on delete cascade
 on update cascade
@@ -225,6 +226,7 @@ create table Patient_Diseases
 (
 patientID int,
 Diseases varchar(50),
+primary key (patientID,Diseases),
 foreign key (patientID) references Patient
 on delete cascade
 on update cascade
