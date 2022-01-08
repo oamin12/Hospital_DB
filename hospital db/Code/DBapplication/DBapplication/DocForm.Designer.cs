@@ -32,42 +32,43 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.pat_fname = new System.Windows.Forms.Label();
+            this.pat_sex = new System.Windows.Forms.Label();
+            this.pat_blood_combo = new System.Windows.Forms.ComboBox();
+            this.Allergies_combo = new System.Windows.Forms.ComboBox();
+            this.Change_btype_button = new System.Windows.Forms.Button();
+            this.Add_Allergy_button = new System.Windows.Forms.Button();
+            this.Add_Disease_button = new System.Windows.Forms.Button();
+            this.Disease_combo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.pat_ID_combo = new System.Windows.Forms.ComboBox();
+            this.Add_Allergy_textbox = new System.Windows.Forms.TextBox();
+            this.Add_Disease_textbox = new System.Windows.Forms.TextBox();
+            this.Appointments_dates_combo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.pat_lname = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.reportbox = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.UpdateRep_button = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Dismiss_Patient_button = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.patblood = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Pat_DOB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(690, 46);
+            this.button1.Location = new System.Drawing.Point(14, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 28);
             this.button1.TabIndex = 0;
@@ -77,16 +78,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 23);
+            this.label1.Location = new System.Drawing.Point(28, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 16);
+            this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ID:";
+            this.label1.Text = "Patient ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 101);
+            this.label2.Location = new System.Drawing.Point(28, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 2;
@@ -95,24 +96,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 181);
+            this.label3.Location = new System.Drawing.Point(30, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 3;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Age: ";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 211);
+            this.label5.Location = new System.Drawing.Point(30, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 16);
             this.label5.TabIndex = 5;
@@ -121,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 255);
+            this.label6.Location = new System.Drawing.Point(30, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 16);
             this.label6.TabIndex = 6;
@@ -130,7 +122,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 331);
+            this.label9.Location = new System.Drawing.Point(30, 414);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 16);
             this.label9.TabIndex = 8;
@@ -139,98 +131,101 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 348);
+            this.label10.Location = new System.Drawing.Point(30, 431);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(0, 16);
             this.label10.TabIndex = 7;
             // 
-            // label11
+            // pat_fname
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(130, 101);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 16);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "fname";
+            this.pat_fname.AutoSize = true;
+            this.pat_fname.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pat_fname.Location = new System.Drawing.Point(134, 184);
+            this.pat_fname.Name = "pat_fname";
+            this.pat_fname.Size = new System.Drawing.Size(47, 16);
+            this.pat_fname.TabIndex = 11;
+            this.pat_fname.Text = "fname";
             // 
-            // label12
+            // pat_sex
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(130, 164);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 16);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "pat age";
+            this.pat_sex.AutoSize = true;
+            this.pat_sex.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pat_sex.Location = new System.Drawing.Point(134, 294);
+            this.pat_sex.Name = "pat_sex";
+            this.pat_sex.Size = new System.Drawing.Size(79, 16);
+            this.pat_sex.TabIndex = 13;
+            this.pat_sex.Text = "pat gender";
             // 
-            // label13
+            // pat_blood_combo
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(130, 211);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 16);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "pat gender";
+            this.pat_blood_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pat_blood_combo.FormattingEnabled = true;
+            this.pat_blood_combo.Items.AddRange(new object[] {
+            "O-",
+            "O+",
+            "A-",
+            "A+",
+            "B-",
+            "B+",
+            "AB-",
+            "AB+"});
+            this.pat_blood_combo.Location = new System.Drawing.Point(264, 335);
+            this.pat_blood_combo.Name = "pat_blood_combo";
+            this.pat_blood_combo.Size = new System.Drawing.Size(100, 24);
+            this.pat_blood_combo.TabIndex = 14;
             // 
-            // comboBox1
+            // Allergies_combo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 252);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 14;
+            this.Allergies_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Allergies_combo.FormattingEnabled = true;
+            this.Allergies_combo.Location = new System.Drawing.Point(137, 407);
+            this.Allergies_combo.Name = "Allergies_combo";
+            this.Allergies_combo.Size = new System.Drawing.Size(121, 24);
+            this.Allergies_combo.TabIndex = 15;
             // 
-            // comboBox2
+            // Change_btype_button
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 324);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 15;
+            this.Change_btype_button.Location = new System.Drawing.Point(370, 323);
+            this.Change_btype_button.Name = "Change_btype_button";
+            this.Change_btype_button.Size = new System.Drawing.Size(129, 46);
+            this.Change_btype_button.TabIndex = 16;
+            this.Change_btype_button.Text = "Change";
+            this.Change_btype_button.UseVisualStyleBackColor = true;
+            this.Change_btype_button.Click += new System.EventHandler(this.Change_btype_button_Click);
             // 
-            // button2
+            // Add_Allergy_button
             // 
-            this.button2.Location = new System.Drawing.Point(270, 252);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Change";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Add_Allergy_button.Location = new System.Drawing.Point(370, 398);
+            this.Add_Allergy_button.Name = "Add_Allergy_button";
+            this.Add_Allergy_button.Size = new System.Drawing.Size(129, 41);
+            this.Add_Allergy_button.TabIndex = 17;
+            this.Add_Allergy_button.Text = "Add Allergy";
+            this.Add_Allergy_button.UseVisualStyleBackColor = true;
+            this.Add_Allergy_button.Click += new System.EventHandler(this.Add_Allergy_button_Click);
             // 
-            // button3
+            // Add_Disease_button
             // 
-            this.button3.Location = new System.Drawing.Point(366, 315);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 41);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Add Allergy";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Add_Disease_button.Location = new System.Drawing.Point(370, 461);
+            this.Add_Disease_button.Name = "Add_Disease_button";
+            this.Add_Disease_button.Size = new System.Drawing.Size(129, 41);
+            this.Add_Disease_button.TabIndex = 21;
+            this.Add_Disease_button.Text = "Add Disease";
+            this.Add_Disease_button.UseVisualStyleBackColor = true;
+            this.Add_Disease_button.Click += new System.EventHandler(this.Add_Disease_button_Click);
             // 
-            // button4
+            // Disease_combo
             // 
-            this.button4.Location = new System.Drawing.Point(366, 378);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 41);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Add Disease";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(133, 387);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 20;
+            this.Disease_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Disease_combo.FormattingEnabled = true;
+            this.Disease_combo.Location = new System.Drawing.Point(137, 470);
+            this.Disease_combo.Name = "Disease_combo";
+            this.Disease_combo.Size = new System.Drawing.Size(121, 24);
+            this.Disease_combo.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 392);
+            this.label8.Location = new System.Drawing.Point(30, 475);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 16);
             this.label8.TabIndex = 19;
@@ -239,117 +234,121 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(26, 404);
+            this.label14.Location = new System.Drawing.Point(30, 487);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 16);
             this.label14.TabIndex = 18;
             // 
-            // comboBox4
+            // pat_ID_combo
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(133, 20);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 22;
+            this.pat_ID_combo.FormattingEnabled = true;
+            this.pat_ID_combo.Location = new System.Drawing.Point(137, 103);
+            this.pat_ID_combo.Name = "pat_ID_combo";
+            this.pat_ID_combo.Size = new System.Drawing.Size(197, 24);
+            this.pat_ID_combo.TabIndex = 22;
+            this.pat_ID_combo.SelectedIndexChanged += new System.EventHandler(this.Pat_ID_combo_SelectionChangeCommitted);
             // 
-            // textBox1
+            // Add_Allergy_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(260, 324);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 23;
+            this.Add_Allergy_textbox.Location = new System.Drawing.Point(264, 407);
+            this.Add_Allergy_textbox.Name = "Add_Allergy_textbox";
+            this.Add_Allergy_textbox.Size = new System.Drawing.Size(100, 22);
+            this.Add_Allergy_textbox.TabIndex = 23;
             // 
-            // textBox2
+            // Add_Disease_textbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(260, 387);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 24;
+            this.Add_Disease_textbox.Location = new System.Drawing.Point(264, 470);
+            this.Add_Disease_textbox.Name = "Add_Disease_textbox";
+            this.Add_Disease_textbox.Size = new System.Drawing.Size(100, 22);
+            this.Add_Disease_textbox.TabIndex = 24;
             // 
-            // comboBox5
+            // Appointments_dates_combo
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(133, 54);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 24);
-            this.comboBox5.TabIndex = 26;
+            this.Appointments_dates_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Appointments_dates_combo.FormattingEnabled = true;
+            this.Appointments_dates_combo.Location = new System.Drawing.Point(137, 137);
+            this.Appointments_dates_combo.Name = "Appointments_dates_combo";
+            this.Appointments_dates_combo.Size = new System.Drawing.Size(197, 24);
+            this.Appointments_dates_combo.TabIndex = 26;
+            this.Appointments_dates_combo.SelectionChangeCommitted += new System.EventHandler(this.Appointments_dates_combo_SelectionChangeCommitted);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 57);
+            this.label7.Location = new System.Drawing.Point(28, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 16);
             this.label7.TabIndex = 25;
             this.label7.Text = "Appointment:  :";
             // 
-            // label15
+            // pat_lname
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(130, 128);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 16);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "lname";
+            this.pat_lname.AutoSize = true;
+            this.pat_lname.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pat_lname.Location = new System.Drawing.Point(134, 211);
+            this.pat_lname.Name = "pat_lname";
+            this.pat_lname.Size = new System.Drawing.Size(45, 16);
+            this.pat_lname.TabIndex = 28;
+            this.pat_lname.Text = "lname";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(24, 128);
+            this.label16.Location = new System.Drawing.Point(28, 211);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 16);
             this.label16.TabIndex = 27;
             this.label16.Text = "LastName: ";
             // 
-            // richTextBox1
+            // reportbox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(651, 183);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(467, 238);
-            this.richTextBox1.TabIndex = 29;
-            this.richTextBox1.Text = "";
+            this.reportbox.Location = new System.Drawing.Point(857, 86);
+            this.reportbox.Name = "reportbox";
+            this.reportbox.Size = new System.Drawing.Size(467, 238);
+            this.reportbox.TabIndex = 29;
+            this.reportbox.Text = "";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(648, 146);
+            this.label17.Location = new System.Drawing.Point(854, 67);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 16);
             this.label17.TabIndex = 30;
             this.label17.Text = "Report : ";
             // 
-            // button5
+            // UpdateRep_button
             // 
-            this.button5.Location = new System.Drawing.Point(800, 433);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 41);
-            this.button5.TabIndex = 31;
-            this.button5.Text = "Update Report";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.UpdateRep_button.Location = new System.Drawing.Point(1019, 365);
+            this.UpdateRep_button.Name = "UpdateRep_button";
+            this.UpdateRep_button.Size = new System.Drawing.Size(129, 41);
+            this.UpdateRep_button.TabIndex = 31;
+            this.UpdateRep_button.Text = "Update Report";
+            this.UpdateRep_button.UseVisualStyleBackColor = true;
+            this.UpdateRep_button.Click += new System.EventHandler(this.UpdateRep_button_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(921, 46);
+            this.button6.Location = new System.Drawing.Point(158, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(161, 28);
             this.button6.TabIndex = 32;
             this.button6.Text = "Search for patient";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // Dismiss_Patient_button
             // 
-            this.button7.Location = new System.Drawing.Point(10, 446);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(98, 28);
-            this.button7.TabIndex = 33;
-            this.button7.Text = "Dismiss";
-            this.button7.UseVisualStyleBackColor = true;
+            this.Dismiss_Patient_button.Location = new System.Drawing.Point(14, 529);
+            this.Dismiss_Patient_button.Name = "Dismiss_Patient_button";
+            this.Dismiss_Patient_button.Size = new System.Drawing.Size(98, 28);
+            this.Dismiss_Patient_button.TabIndex = 33;
+            this.Dismiss_Patient_button.Text = "Dismiss";
+            this.Dismiss_Patient_button.UseVisualStyleBackColor = true;
+            this.Dismiss_Patient_button.Click += new System.EventHandler(this.Dismiss_Patient_button_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(116, 446);
+            this.button8.Location = new System.Drawing.Point(196, 529);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(138, 28);
             this.button8.TabIndex = 34;
@@ -358,7 +357,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(260, 446);
+            this.button9.Location = new System.Drawing.Point(403, 529);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(121, 28);
             this.button9.TabIndex = 35;
@@ -367,55 +366,86 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(387, 446);
+            this.button10.Location = new System.Drawing.Point(599, 529);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(121, 28);
             this.button10.TabIndex = 36;
             this.button10.Text = "Request a room";
             this.button10.UseVisualStyleBackColor = true;
             // 
+            // patblood
+            // 
+            this.patblood.AutoSize = true;
+            this.patblood.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patblood.Location = new System.Drawing.Point(134, 335);
+            this.patblood.Name = "patblood";
+            this.patblood.Size = new System.Drawing.Size(68, 16);
+            this.patblood.TabIndex = 37;
+            this.patblood.Text = "pat blood";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 248);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 16);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "DOB:";
+            // 
+            // Pat_DOB
+            // 
+            this.Pat_DOB.AutoSize = true;
+            this.Pat_DOB.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pat_DOB.Location = new System.Drawing.Point(134, 248);
+            this.Pat_DOB.Name = "Pat_DOB";
+            this.Pat_DOB.Size = new System.Drawing.Size(57, 16);
+            this.Pat_DOB.TabIndex = 39;
+            this.Pat_DOB.Text = "pat bod";
+            // 
             // DocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 496);
+            this.ClientSize = new System.Drawing.Size(1394, 569);
+            this.Controls.Add(this.Pat_DOB);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.patblood);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.Dismiss_Patient_button);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.UpdateRep_button);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.reportbox);
+            this.Controls.Add(this.pat_lname);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.Appointments_dates_combo);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.Add_Disease_textbox);
+            this.Controls.Add(this.Add_Allergy_textbox);
+            this.Controls.Add(this.pat_ID_combo);
+            this.Controls.Add(this.Add_Disease_button);
+            this.Controls.Add(this.Disease_combo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.Add_Allergy_button);
+            this.Controls.Add(this.Change_btype_button);
+            this.Controls.Add(this.Allergies_combo);
+            this.Controls.Add(this.pat_blood_combo);
+            this.Controls.Add(this.pat_sex);
+            this.Controls.Add(this.pat_fname);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "DocForm";
             this.Text = "2q";
+            this.Load += new System.EventHandler(this.DocForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,36 +457,37 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label pat_fname;
+        private System.Windows.Forms.Label pat_sex;
+        private System.Windows.Forms.ComboBox pat_blood_combo;
+        private System.Windows.Forms.ComboBox Allergies_combo;
+        private System.Windows.Forms.Button Change_btype_button;
+        private System.Windows.Forms.Button Add_Allergy_button;
+        private System.Windows.Forms.Button Add_Disease_button;
+        private System.Windows.Forms.ComboBox Disease_combo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox pat_ID_combo;
+        private System.Windows.Forms.TextBox Add_Allergy_textbox;
+        private System.Windows.Forms.TextBox Add_Disease_textbox;
+        private System.Windows.Forms.ComboBox Appointments_dates_combo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label pat_lname;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox reportbox;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button UpdateRep_button;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Dismiss_Patient_button;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label patblood;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Pat_DOB;
     }
 }

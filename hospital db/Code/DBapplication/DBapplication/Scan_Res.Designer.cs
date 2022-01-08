@@ -29,32 +29,33 @@ namespace DBapplication
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ReserveScanButton = new System.Windows.Forms.Button();
+            this.PickScan_Combobox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PickPatient_ComboBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // ReserveScanButton
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(357, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 60);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Reserve scan";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ReserveScanButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReserveScanButton.Location = new System.Drawing.Point(357, 275);
+            this.ReserveScanButton.Name = "ReserveScanButton";
+            this.ReserveScanButton.Size = new System.Drawing.Size(212, 60);
+            this.ReserveScanButton.TabIndex = 9;
+            this.ReserveScanButton.Text = "Reserve scan";
+            this.ReserveScanButton.UseVisualStyleBackColor = true;
+            this.ReserveScanButton.Click += new System.EventHandler(this.ReserveScanButton_Click);
             // 
-            // comboBox2
+            // PickScan_Combobox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(420, 138);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(260, 24);
-            this.comboBox2.TabIndex = 8;
+            this.PickScan_Combobox.FormattingEnabled = true;
+            this.PickScan_Combobox.Location = new System.Drawing.Point(420, 138);
+            this.PickScan_Combobox.Name = "PickScan_Combobox";
+            this.PickScan_Combobox.Size = new System.Drawing.Size(260, 24);
+            this.PickScan_Combobox.TabIndex = 8;
             // 
             // label2
             // 
@@ -77,13 +78,13 @@ namespace DBapplication
             this.label1.TabIndex = 6;
             this.label1.Text = "Choose patient";
             // 
-            // comboBox1
+            // PickPatient_ComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(420, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 24);
-            this.comboBox1.TabIndex = 5;
+            this.PickPatient_ComboBox.FormattingEnabled = true;
+            this.PickPatient_ComboBox.Location = new System.Drawing.Point(420, 75);
+            this.PickPatient_ComboBox.Name = "PickPatient_ComboBox";
+            this.PickPatient_ComboBox.Size = new System.Drawing.Size(260, 24);
+            this.PickPatient_ComboBox.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
@@ -108,11 +109,11 @@ namespace DBapplication
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.ReserveScanButton);
+            this.Controls.Add(this.PickScan_Combobox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.PickPatient_ComboBox);
             this.Name = "Scan_Res";
             this.Size = new System.Drawing.Size(910, 413);
             this.ResumeLayout(false);
@@ -122,11 +123,11 @@ namespace DBapplication
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button ReserveScanButton;
+        private System.Windows.Forms.ComboBox PickScan_Combobox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox PickPatient_ComboBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
     }
