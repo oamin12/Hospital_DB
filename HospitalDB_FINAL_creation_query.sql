@@ -231,7 +231,8 @@ foreign key (patientID) references Patient
 on delete no action
 on update cascade
 )
-
+--requesttype TABLE
+--surgeryrequest TABLE
 create table requests
 (
 ID int IDENTITY(1,1),
@@ -253,7 +254,7 @@ ScanID int,
 foreign key (ScanID) references ScanLab
 on delete no action
 on update no action,
-ScanDate DateTime
+reservationdate DateTime
 
 )
 

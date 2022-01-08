@@ -85,9 +85,26 @@ namespace DBapplication
         }
         public int DeletePatientsRequests(int patid)
         {
-            string query = "DELETE FROM requests WHERE patid =  " + patid +";";
+            string query = "DELETE FROM requests WHERE PatientID =  " + patid +";";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int DeletePatientsScans(int patid)
+        {
+            string query = "DELETE FROM Has_a_scan WHERE PatientID =  " + patid + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeletePatientsAppointments(int patid)
+        {
+            string query = "DELETE FROM Appointment WHERE PatientID =  " + patid + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeletePatientsOperations(int patid)
+        {
+            string query = "DELETE FROM operations WHERE PatientID =  " + patid + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
 
 
         public int Update()
@@ -101,6 +118,13 @@ namespace DBapplication
             string query = $"UPDATE Room SET PatientID = null , Notes = null WHERE PatientID = " + patid + ";";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int Patient_has_no_doctor(int patid)
+        {
+            string query = $"UPDATE Patient SET ResDrID = null WHERE ID = " + patid + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
 
         public int UpdateBloodType(int patid , string btype)
         {

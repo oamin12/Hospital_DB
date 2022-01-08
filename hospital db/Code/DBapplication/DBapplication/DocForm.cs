@@ -26,7 +26,21 @@ namespace DBapplication
         private void RefreshValues()
         {
             string asd = pat_ID_combo.Text;
-            if (String.IsNullOrEmpty(asd)) { return; }
+            if (String.IsNullOrEmpty(asd)) {
+
+                patblood.Text = "";
+                pat_fname.Text = "";
+                pat_lname.Text = "";
+                pat_sex.Text = "";
+                Pat_DOB.Text = "";
+                pat_ID_combo.Text = null;
+                Appointments_dates_combo.Text = null;
+                pat_blood_combo.Text = null;
+                Allergies_combo.Text = null;
+                Disease_combo.Text = null;
+                reportbox.Text = "";
+
+                return; }
 
             int.TryParse(asd, out patid);
 
@@ -180,7 +194,7 @@ namespace DBapplication
             string appoint = Appointments_dates_combo.Text;
             if (String.IsNullOrEmpty(appoint)) { MessageBox.Show("no appointment chosen"); return; }
             int x = controllerobj.UpdateReport(patid , reportbox.Text , appoint);
-            if (x != 0) { RefreshValues();reportbox.Text = ""; }
+            if (x != 0) { RefreshValues(); MessageBox.Show("report updated"); }
         }
 
         private void Appointments_dates_combo_SelectionChangeCommitted(object sender, EventArgs e)
@@ -192,10 +206,21 @@ namespace DBapplication
         private void Dismiss_Patient_button_Click(object sender, EventArgs e)
         {
             string asd = pat_ID_combo.Text;
-            if (String.IsNullOrEmpty(asd)) { return; }
+            if (String.IsNullOrEmpty(asd)) { MessageBox.Show("No patient Choosed"); return; }
 
             int.TryParse(asd, out patid);
-
+            controllerobj.DeletePatientsRequests(patid);
+            controllerobj.DeletePatientsAppointments(patid);
+            controllerobj.DeletePatientsOperations(patid);
+            controllerobj.DeletePatientsScans(patid);
+            controllerobj.Patient_has_no_doctor(patid);
+            controllerobj.Patient_leaves_Room(patid);
+            pat_ID_combo.Text = "";
+            DataTable dt = controllerobj.SelectDocPatient_IDs(myID);
+            pat_ID_combo.DataSource = dt;
+            pat_ID_combo.DisplayMember = "ID";
+            MessageBox.Show("Dismiss done.");
+            RefreshValues();
 
         }
     }
