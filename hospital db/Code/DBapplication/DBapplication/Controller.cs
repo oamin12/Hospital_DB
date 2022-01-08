@@ -58,6 +58,8 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+
+
         public int InsertUser(string pass,string ID, string username,string UserTypeID)
         {
             string query = $"INSERT INTO Users Values ('{pass}',{ID},'{username}',{UserTypeID});";
@@ -91,6 +93,12 @@ namespace DBapplication
         public int UpdateBloodType(int patid , string btype)
         {
             string query = "UPDATE Patient SET BloodType = '" +btype+ "' WHERE ID = "+ patid +";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateReport(int patid, string report , string appointment)
+        {
+            string query = "UPDATE Appointment SET Report = '" + report + "' WHERE PatientID = " + patid + " and Date_time = '" + appointment + "';";
             return dbMan.ExecuteNonQuery(query);
         }
 

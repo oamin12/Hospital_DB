@@ -154,21 +154,38 @@ namespace DBapplication
             if (String.IsNullOrEmpty(pat_fname.Text)) { MessageBox.Show("No patient chosen!!"); return; }
             if(pat_blood_combo.SelectedItem == null) { MessageBox.Show("No blood type chosen!!"); return; }
             controllerobj.UpdateBloodType(patid , pat_blood_combo.Text  );
+        
             RefreshValues();
+            pat_blood_combo.Text = "";
         }
 
         private void Add_Allergy_button_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(pat_fname.Text)) { MessageBox.Show("No patient chosen!!"); return; }
             if (String.IsNullOrEmpty(Add_Allergy_textbox.Text)) { MessageBox.Show("No Allergy added!"); return; }
-            controllerobj.InsertAllergy(patid, Add_Allergy_textbox.Text);
+            int x = controllerobj.InsertAllergy(patid, Add_Allergy_textbox.Text);
+            if (x != 0) { Add_Allergy_textbox.Text = ""; RefreshValues(); }
         }
 
         private void Add_Disease_button_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(pat_fname.Text)) { MessageBox.Show("No patient chosen!!"); return; }
             if (String.IsNullOrEmpty(Add_Disease_textbox.Text)) { MessageBox.Show("No Disease added!"); return; }
-            controllerobj.InsertDisease(patid, Add_Disease_textbox.Text);
+            int x = controllerobj.InsertDisease(patid, Add_Disease_textbox.Text);
+            if (x != 0) { Add_Disease_textbox.Text = ""; RefreshValues(); }
+        }
+
+        private void UpdateRep_button_Click(object sender, EventArgs e)
+        {
+            string appoint = Appointments_dates_combo.Text;
+            if (String.IsNullOrEmpty(appoint)) { MessageBox.Show("no appointment chosen"); return; }
+            int x = controllerobj.UpdateReport(patid , reportbox.Text , appoint);
+            if (x != 0) { RefreshValues();reportbox.Text = ""; }
+        }
+
+        private void Appointments_dates_combo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            RefreshValues();
         }
     }
 }

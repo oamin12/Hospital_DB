@@ -55,7 +55,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.reportbox = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.UpdateRep_button = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -270,6 +270,7 @@
             this.Appointments_dates_combo.Name = "Appointments_dates_combo";
             this.Appointments_dates_combo.Size = new System.Drawing.Size(121, 24);
             this.Appointments_dates_combo.TabIndex = 26;
+            this.Appointments_dates_combo.SelectionChangeCommitted += new System.EventHandler(this.Appointments_dates_combo_SelectionChangeCommitted);
             // 
             // label7
             // 
@@ -316,14 +317,15 @@
             this.label17.TabIndex = 30;
             this.label17.Text = "Report : ";
             // 
-            // button5
+            // UpdateRep_button
             // 
-            this.button5.Location = new System.Drawing.Point(800, 433);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 41);
-            this.button5.TabIndex = 31;
-            this.button5.Text = "Update Report";
-            this.button5.UseVisualStyleBackColor = true;
+            this.UpdateRep_button.Location = new System.Drawing.Point(800, 433);
+            this.UpdateRep_button.Name = "UpdateRep_button";
+            this.UpdateRep_button.Size = new System.Drawing.Size(129, 41);
+            this.UpdateRep_button.TabIndex = 31;
+            this.UpdateRep_button.Text = "Update Report";
+            this.UpdateRep_button.UseVisualStyleBackColor = true;
+            this.UpdateRep_button.Click += new System.EventHandler(this.UpdateRep_button_Click);
             // 
             // button6
             // 
@@ -412,7 +414,7 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.UpdateRep_button);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.reportbox);
             this.Controls.Add(this.pat_lname);
@@ -477,7 +479,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RichTextBox reportbox;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button UpdateRep_button;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
