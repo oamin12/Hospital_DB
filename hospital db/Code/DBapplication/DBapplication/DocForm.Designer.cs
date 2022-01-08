@@ -57,7 +57,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.UpdateRep_button = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Dismiss_Patient_button = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(690, 46);
+            this.button1.Location = new System.Drawing.Point(14, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 28);
             this.button1.TabIndex = 0;
@@ -78,7 +78,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 23);
+            this.label1.Location = new System.Drawing.Point(28, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 1;
@@ -87,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 101);
+            this.label2.Location = new System.Drawing.Point(28, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 2;
@@ -96,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 181);
+            this.label3.Location = new System.Drawing.Point(30, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 3;
@@ -104,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 211);
+            this.label5.Location = new System.Drawing.Point(30, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 16);
             this.label5.TabIndex = 5;
@@ -113,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 255);
+            this.label6.Location = new System.Drawing.Point(30, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 16);
             this.label6.TabIndex = 6;
@@ -122,7 +122,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 331);
+            this.label9.Location = new System.Drawing.Point(30, 414);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 16);
             this.label9.TabIndex = 8;
@@ -131,7 +131,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 348);
+            this.label10.Location = new System.Drawing.Point(30, 431);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(0, 16);
             this.label10.TabIndex = 7;
@@ -140,7 +140,7 @@
             // 
             this.pat_fname.AutoSize = true;
             this.pat_fname.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pat_fname.Location = new System.Drawing.Point(130, 101);
+            this.pat_fname.Location = new System.Drawing.Point(134, 184);
             this.pat_fname.Name = "pat_fname";
             this.pat_fname.Size = new System.Drawing.Size(47, 16);
             this.pat_fname.TabIndex = 11;
@@ -150,7 +150,7 @@
             // 
             this.pat_sex.AutoSize = true;
             this.pat_sex.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pat_sex.Location = new System.Drawing.Point(130, 211);
+            this.pat_sex.Location = new System.Drawing.Point(134, 294);
             this.pat_sex.Name = "pat_sex";
             this.pat_sex.Size = new System.Drawing.Size(79, 16);
             this.pat_sex.TabIndex = 13;
@@ -169,7 +169,7 @@
             "B+",
             "AB-",
             "AB+"});
-            this.pat_blood_combo.Location = new System.Drawing.Point(260, 247);
+            this.pat_blood_combo.Location = new System.Drawing.Point(264, 335);
             this.pat_blood_combo.Name = "pat_blood_combo";
             this.pat_blood_combo.Size = new System.Drawing.Size(100, 24);
             this.pat_blood_combo.TabIndex = 14;
@@ -178,14 +178,14 @@
             // 
             this.Allergies_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Allergies_combo.FormattingEnabled = true;
-            this.Allergies_combo.Location = new System.Drawing.Point(133, 324);
+            this.Allergies_combo.Location = new System.Drawing.Point(137, 407);
             this.Allergies_combo.Name = "Allergies_combo";
             this.Allergies_combo.Size = new System.Drawing.Size(121, 24);
             this.Allergies_combo.TabIndex = 15;
             // 
             // Change_btype_button
             // 
-            this.Change_btype_button.Location = new System.Drawing.Point(366, 240);
+            this.Change_btype_button.Location = new System.Drawing.Point(370, 323);
             this.Change_btype_button.Name = "Change_btype_button";
             this.Change_btype_button.Size = new System.Drawing.Size(129, 46);
             this.Change_btype_button.TabIndex = 16;
@@ -195,7 +195,7 @@
             // 
             // Add_Allergy_button
             // 
-            this.Add_Allergy_button.Location = new System.Drawing.Point(366, 315);
+            this.Add_Allergy_button.Location = new System.Drawing.Point(370, 398);
             this.Add_Allergy_button.Name = "Add_Allergy_button";
             this.Add_Allergy_button.Size = new System.Drawing.Size(129, 41);
             this.Add_Allergy_button.TabIndex = 17;
@@ -205,7 +205,7 @@
             // 
             // Add_Disease_button
             // 
-            this.Add_Disease_button.Location = new System.Drawing.Point(366, 378);
+            this.Add_Disease_button.Location = new System.Drawing.Point(370, 461);
             this.Add_Disease_button.Name = "Add_Disease_button";
             this.Add_Disease_button.Size = new System.Drawing.Size(129, 41);
             this.Add_Disease_button.TabIndex = 21;
@@ -217,7 +217,7 @@
             // 
             this.Disease_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Disease_combo.FormattingEnabled = true;
-            this.Disease_combo.Location = new System.Drawing.Point(133, 387);
+            this.Disease_combo.Location = new System.Drawing.Point(137, 470);
             this.Disease_combo.Name = "Disease_combo";
             this.Disease_combo.Size = new System.Drawing.Size(121, 24);
             this.Disease_combo.TabIndex = 20;
@@ -225,7 +225,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 392);
+            this.label8.Location = new System.Drawing.Point(30, 475);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 16);
             this.label8.TabIndex = 19;
@@ -234,7 +234,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(26, 404);
+            this.label14.Location = new System.Drawing.Point(30, 487);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 16);
             this.label14.TabIndex = 18;
@@ -242,22 +242,22 @@
             // pat_ID_combo
             // 
             this.pat_ID_combo.FormattingEnabled = true;
-            this.pat_ID_combo.Location = new System.Drawing.Point(133, 20);
+            this.pat_ID_combo.Location = new System.Drawing.Point(137, 103);
             this.pat_ID_combo.Name = "pat_ID_combo";
-            this.pat_ID_combo.Size = new System.Drawing.Size(121, 24);
+            this.pat_ID_combo.Size = new System.Drawing.Size(197, 24);
             this.pat_ID_combo.TabIndex = 22;
             this.pat_ID_combo.SelectedIndexChanged += new System.EventHandler(this.Pat_ID_combo_SelectionChangeCommitted);
             // 
             // Add_Allergy_textbox
             // 
-            this.Add_Allergy_textbox.Location = new System.Drawing.Point(260, 324);
+            this.Add_Allergy_textbox.Location = new System.Drawing.Point(264, 407);
             this.Add_Allergy_textbox.Name = "Add_Allergy_textbox";
             this.Add_Allergy_textbox.Size = new System.Drawing.Size(100, 22);
             this.Add_Allergy_textbox.TabIndex = 23;
             // 
             // Add_Disease_textbox
             // 
-            this.Add_Disease_textbox.Location = new System.Drawing.Point(260, 387);
+            this.Add_Disease_textbox.Location = new System.Drawing.Point(264, 470);
             this.Add_Disease_textbox.Name = "Add_Disease_textbox";
             this.Add_Disease_textbox.Size = new System.Drawing.Size(100, 22);
             this.Add_Disease_textbox.TabIndex = 24;
@@ -266,16 +266,16 @@
             // 
             this.Appointments_dates_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Appointments_dates_combo.FormattingEnabled = true;
-            this.Appointments_dates_combo.Location = new System.Drawing.Point(133, 54);
+            this.Appointments_dates_combo.Location = new System.Drawing.Point(137, 137);
             this.Appointments_dates_combo.Name = "Appointments_dates_combo";
-            this.Appointments_dates_combo.Size = new System.Drawing.Size(121, 24);
+            this.Appointments_dates_combo.Size = new System.Drawing.Size(197, 24);
             this.Appointments_dates_combo.TabIndex = 26;
             this.Appointments_dates_combo.SelectionChangeCommitted += new System.EventHandler(this.Appointments_dates_combo_SelectionChangeCommitted);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 57);
+            this.label7.Location = new System.Drawing.Point(28, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 16);
             this.label7.TabIndex = 25;
@@ -285,7 +285,7 @@
             // 
             this.pat_lname.AutoSize = true;
             this.pat_lname.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pat_lname.Location = new System.Drawing.Point(130, 128);
+            this.pat_lname.Location = new System.Drawing.Point(134, 211);
             this.pat_lname.Name = "pat_lname";
             this.pat_lname.Size = new System.Drawing.Size(45, 16);
             this.pat_lname.TabIndex = 28;
@@ -294,7 +294,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(24, 128);
+            this.label16.Location = new System.Drawing.Point(28, 211);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 16);
             this.label16.TabIndex = 27;
@@ -302,7 +302,7 @@
             // 
             // reportbox
             // 
-            this.reportbox.Location = new System.Drawing.Point(651, 183);
+            this.reportbox.Location = new System.Drawing.Point(857, 86);
             this.reportbox.Name = "reportbox";
             this.reportbox.Size = new System.Drawing.Size(467, 238);
             this.reportbox.TabIndex = 29;
@@ -311,7 +311,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(648, 146);
+            this.label17.Location = new System.Drawing.Point(854, 67);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 16);
             this.label17.TabIndex = 30;
@@ -319,7 +319,7 @@
             // 
             // UpdateRep_button
             // 
-            this.UpdateRep_button.Location = new System.Drawing.Point(800, 433);
+            this.UpdateRep_button.Location = new System.Drawing.Point(1019, 365);
             this.UpdateRep_button.Name = "UpdateRep_button";
             this.UpdateRep_button.Size = new System.Drawing.Size(129, 41);
             this.UpdateRep_button.TabIndex = 31;
@@ -329,25 +329,26 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(921, 46);
+            this.button6.Location = new System.Drawing.Point(158, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(161, 28);
             this.button6.TabIndex = 32;
             this.button6.Text = "Search for patient";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // Dismiss_Patient_button
             // 
-            this.button7.Location = new System.Drawing.Point(10, 446);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(98, 28);
-            this.button7.TabIndex = 33;
-            this.button7.Text = "Dismiss";
-            this.button7.UseVisualStyleBackColor = true;
+            this.Dismiss_Patient_button.Location = new System.Drawing.Point(14, 529);
+            this.Dismiss_Patient_button.Name = "Dismiss_Patient_button";
+            this.Dismiss_Patient_button.Size = new System.Drawing.Size(98, 28);
+            this.Dismiss_Patient_button.TabIndex = 33;
+            this.Dismiss_Patient_button.Text = "Dismiss";
+            this.Dismiss_Patient_button.UseVisualStyleBackColor = true;
+            this.Dismiss_Patient_button.Click += new System.EventHandler(this.Dismiss_Patient_button_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(116, 446);
+            this.button8.Location = new System.Drawing.Point(196, 529);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(138, 28);
             this.button8.TabIndex = 34;
@@ -356,7 +357,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(260, 446);
+            this.button9.Location = new System.Drawing.Point(403, 529);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(121, 28);
             this.button9.TabIndex = 35;
@@ -365,7 +366,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(387, 446);
+            this.button10.Location = new System.Drawing.Point(599, 529);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(121, 28);
             this.button10.TabIndex = 36;
@@ -376,7 +377,7 @@
             // 
             this.patblood.AutoSize = true;
             this.patblood.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patblood.Location = new System.Drawing.Point(130, 252);
+            this.patblood.Location = new System.Drawing.Point(134, 335);
             this.patblood.Name = "patblood";
             this.patblood.Size = new System.Drawing.Size(68, 16);
             this.patblood.TabIndex = 37;
@@ -385,7 +386,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 165);
+            this.label4.Location = new System.Drawing.Point(30, 248);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 16);
             this.label4.TabIndex = 38;
@@ -395,7 +396,7 @@
             // 
             this.Pat_DOB.AutoSize = true;
             this.Pat_DOB.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pat_DOB.Location = new System.Drawing.Point(130, 165);
+            this.Pat_DOB.Location = new System.Drawing.Point(134, 248);
             this.Pat_DOB.Name = "Pat_DOB";
             this.Pat_DOB.Size = new System.Drawing.Size(57, 16);
             this.Pat_DOB.TabIndex = 39;
@@ -405,14 +406,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 496);
+            this.ClientSize = new System.Drawing.Size(1394, 569);
             this.Controls.Add(this.Pat_DOB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.patblood);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.Dismiss_Patient_button);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.UpdateRep_button);
             this.Controls.Add(this.label17);
@@ -481,7 +482,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button UpdateRep_button;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Dismiss_Patient_button;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;

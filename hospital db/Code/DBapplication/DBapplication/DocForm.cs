@@ -12,7 +12,7 @@ namespace DBapplication
     public partial class DocForm : Form
     {
         int myID;
-        int patid;
+        int patid = 0;
         int patpersonid;
         Controller controllerobj;
         public DocForm(int ID , Controller c)
@@ -186,6 +186,17 @@ namespace DBapplication
         private void Appointments_dates_combo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             RefreshValues();
+            
+        }
+
+        private void Dismiss_Patient_button_Click(object sender, EventArgs e)
+        {
+            string asd = pat_ID_combo.Text;
+            if (String.IsNullOrEmpty(asd)) { return; }
+
+            int.TryParse(asd, out patid);
+
+
         }
     }
 }

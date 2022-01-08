@@ -218,7 +218,7 @@ patientID int,
 allergies varchar(50),
 primary key (patientID,allergies),
 foreign key (patientID) references Patient
-on delete cascade
+on delete no action
 on update cascade
 )
 
@@ -228,7 +228,7 @@ patientID int,
 Diseases varchar(50),
 primary key (patientID,Diseases),
 foreign key (patientID) references Patient
-on delete cascade
+on delete no action
 on update cascade
 )
 

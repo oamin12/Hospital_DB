@@ -83,10 +83,22 @@ namespace DBapplication
             string query = $"DELETE FROM  WHERE ";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int DeletePatientsRequests(int patid)
+        {
+            string query = "DELETE FROM requests WHERE patid =  " + patid +";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
         public int Update()
         {
             string query = $"UPDATE SET WHERE ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int Patient_leaves_Room(int patid)
+        {
+            string query = $"UPDATE Room SET PatientID = null , Notes = null WHERE PatientID = " + patid + ";";
             return dbMan.ExecuteNonQuery(query);
         }
 
