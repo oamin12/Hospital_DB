@@ -24,7 +24,12 @@ namespace DBapplication
 
         private void Reserve_bed_button_Click(object sender, EventArgs e)
         {
-            int r = controllerObj.ReserveRoom(, Convert.ToInt32(Patient_Pick_combobox.Text));
+             //int r = controllerObj.ReserveRoom(, Convert.ToInt32(Patient_Pick_combobox.Text));
+        }
+
+        private void ROOM_RES_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
