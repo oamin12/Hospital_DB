@@ -113,7 +113,7 @@ namespace DBapplication
             //Refresh patient values
             string asd = pat_ID_combo.Text;
             if (String.IsNullOrEmpty(asd)) { return; }
-            
+
             int.TryParse(asd, out patid);
 
 
@@ -133,16 +133,17 @@ namespace DBapplication
             Disease_combo.DataSource = dt;
             Disease_combo.DisplayMember = "Diseases";
 
-            dt = controllerobj.SelectAppointmentsDates(myID , patid);
+            dt = controllerobj.SelectAppointmentsDates(myID, patid);
             Appointments_dates_combo.DataSource = dt;
             Appointments_dates_combo.DisplayMember = "Date_time";
 
             string appoint = Appointments_dates_combo.Text;
 
-            dt = controllerobj.SelectAppointmentReport(myID, patid , appoint);
+            dt = controllerobj.SelectAppointmentReport(myID, patid, appoint);
+            if (dt != null) {
             string report = dt.Rows[0][0].ToString();
             reportbox.Text = report;
-
+        }
 
 
 
@@ -222,6 +223,12 @@ namespace DBapplication
             MessageBox.Show("Dismiss done.");
             RefreshValues();
 
+        }
+
+        private void PatientSearch_Click(object sender, EventArgs e)
+        {
+            Find_Patient findp = new Find_Patient(myID, controllerobj);
+            findp.Show();
         }
     }
 }

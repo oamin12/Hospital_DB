@@ -172,6 +172,22 @@ namespace DBapplication
             string query = "SELECT * FROM Patient Where ID =  " + patid;
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectPatientnameanddata(string name , int docid)
+        {
+            string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " +docid + " and (FName = '" + name+"' OR LName = '" + name+"' );";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectallPatientnameanddata( int docid)
+        {
+            string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " + docid + " ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectPatientsnames()
+        {
+            string query = "select Distinct FName from Person as p , Patient pat where pat.PersonID = p.ID union select Distinct LName from Person as p , Patient as pat where pat.PersonID = p.ID ";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectPatientPersondata(int patid)
         {
             string query = "SELECT * FROM Person Where ID =  " + patid;
@@ -200,6 +216,7 @@ namespace DBapplication
             string query = "SELECT Report FROM Appointment Where PatientID =  " + patid + " and DrID = " + docid + " and Date_time = '" + app + "';";
             return dbMan.ExecuteReader(query);
         }
+
 
 
         public int getUserTypeID(string username)

@@ -56,7 +56,7 @@
             this.reportbox = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.UpdateRep_button = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.PatientSearch = new System.Windows.Forms.Button();
             this.Dismiss_Patient_button = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -327,14 +327,15 @@
             this.UpdateRep_button.UseVisualStyleBackColor = true;
             this.UpdateRep_button.Click += new System.EventHandler(this.UpdateRep_button_Click);
             // 
-            // button6
+            // PatientSearch
             // 
-            this.button6.Location = new System.Drawing.Point(158, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(161, 28);
-            this.button6.TabIndex = 32;
-            this.button6.Text = "Search for patient";
-            this.button6.UseVisualStyleBackColor = true;
+            this.PatientSearch.Location = new System.Drawing.Point(158, 12);
+            this.PatientSearch.Name = "PatientSearch";
+            this.PatientSearch.Size = new System.Drawing.Size(161, 28);
+            this.PatientSearch.TabIndex = 32;
+            this.PatientSearch.Text = "Search for patient";
+            this.PatientSearch.UseVisualStyleBackColor = true;
+            this.PatientSearch.Click += new System.EventHandler(this.PatientSearch_Click);
             // 
             // Dismiss_Patient_button
             // 
@@ -414,7 +415,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.Dismiss_Patient_button);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.PatientSearch);
             this.Controls.Add(this.UpdateRep_button);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.reportbox);
@@ -481,7 +482,7 @@
         private System.Windows.Forms.RichTextBox reportbox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button UpdateRep_button;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button PatientSearch;
         private System.Windows.Forms.Button Dismiss_Patient_button;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;

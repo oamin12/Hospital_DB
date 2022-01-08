@@ -92,6 +92,12 @@
     <Compile Include="Adminstration.Designer.cs">
       <DependentUpon>Adminstration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Find_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Find_Patient.Designer.cs">
+      <DependentUpon>Find_Patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="look_Up_page.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adminstration.resx">
       <DependentUpon>Adminstration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Find_Patient.resx">
+      <DependentUpon>Find_Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="look_Up_page.resx">
       <DependentUpon>look_Up_page.cs</DependentUpon>
