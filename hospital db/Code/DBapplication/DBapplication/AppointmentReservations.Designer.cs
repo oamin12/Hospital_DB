@@ -135,6 +135,7 @@ namespace DBapplication
             // 
             // radioButton2
             // 
+            this.radioButton2.AutoCheck = false;
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(321, 219);
             this.radioButton2.Name = "radioButton2";

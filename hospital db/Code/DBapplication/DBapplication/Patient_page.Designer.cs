@@ -72,7 +72,7 @@ namespace DBapplication
             this.AddPatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddPatientButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddPatientButton.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.AddPatientButton.Location = new System.Drawing.Point(401, 406);
+            this.AddPatientButton.Location = new System.Drawing.Point(411, 396);
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.Size = new System.Drawing.Size(253, 47);
             this.AddPatientButton.TabIndex = 1;
