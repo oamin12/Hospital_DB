@@ -183,9 +183,27 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable SelectPatientsnames()
+        public DataTable SelectPatientsnames(int docid)
         {
-            string query = "select Distinct FName from Person as p , Patient pat where pat.PersonID = p.ID union select Distinct LName from Person as p , Patient as pat where pat.PersonID = p.ID ";
+            string StoredProcedureName = StoredProcedures.getdrpatients;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+
+        }
+        public DataTable getappointments(int docid , DateTime strt , DateTime final)
+        {
+            string StoredProcedureName = StoredProcedures.getappointment;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@startdate", strt);
+            Parameters.Add("@finaldate", final);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+
+        }
+        public DataTable selectappointments(int docid)
+        {
+            string query = "select Date_time from Appointment  where DrID =   "+ docid+ ";";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectPatientPersondata(int patid)

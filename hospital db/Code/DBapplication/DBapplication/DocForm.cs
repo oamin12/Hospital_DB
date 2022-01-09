@@ -11,6 +11,7 @@ namespace DBapplication
 {
     public partial class DocForm : Form
     {
+
         int myID;
         int patid = 0;
         int patpersonid;
@@ -229,6 +230,18 @@ namespace DBapplication
         {
             Find_Patient findp = new Find_Patient(myID, controllerobj);
             findp.Show();
+        }
+
+        public DocForm(int ID)
+        {
+
+            InitializeComponent();
+        }
+
+        private void schedule_btn_Click(object sender, EventArgs e)
+        {
+            DocSchedule docs = new DocSchedule(myID , controllerobj);
+            docs.Show();
         }
     }
 }
