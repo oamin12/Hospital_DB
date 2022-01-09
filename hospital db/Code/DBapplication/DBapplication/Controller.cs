@@ -21,40 +21,40 @@ namespace DBapplication
             string query = $"INSERT INTO  Values ();";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int InsertAperson(string Fname,string LName,string ID,string BOD,string Gender)
+        public int InsertAperson(string Fname,string LName,string BOD,string Gender)
         {
-            string query = $"INSERT INTO Person Values ('{Fname}','{LName}',{ID},'{BOD}','{Gender}');";
+            string query = $"INSERT INTO Person Values ('{Fname}','{LName}','{BOD}','{Gender}');";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertaDr(string ID, string Salary, string DID, string SuperID, string PersonID)
+        public int InsertaDr(string Salary, string DID,string PersonID ,string SuperID)
         {
             string query;
-            if (SuperID == "-1")
+            if (SuperID == "-1" || SuperID == "")
             {
-                query = $"INSERT INTO Doctors(ID,Salary,DepID,PersonID) Values ({ID},{Salary},{DID},{PersonID});";
+                query = $"INSERT INTO Doctors(Salary,DepID,PersonID) Values ({Salary},{DID},{PersonID});";
                 return dbMan.ExecuteNonQuery(query);
             }
-            query = $"INSERT INTO Doctors Values ({ID},{Salary},{DID},{SuperID},{PersonID});";
+            query = $"INSERT INTO Doctors Values ({Salary},{DID},{SuperID},{PersonID});";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertEmployee(string ID, string PersonID, string EmpType, string Salary, string DID )
+        public int InsertEmployee(string PersonID, string EmpType, string Salary, string DID )
         {
             string query;
-            query = $"INSERT INTO Employee Values ({ID},{PersonID},{EmpType},{Salary},{DID});";
+            query = $"INSERT INTO Employee Values ({PersonID},{EmpType},{Salary},{DID});";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertaNurse(string ID, string Salary,string PersonID,string SuperID)
+        public int InsertaNurse(string Salary,string PersonID,string SuperID)
         {
             string query;
-            if (SuperID == "-1")
+            if (SuperID == "-1" || SuperID == "")
             {
-                query = $"INSERT INTO Nurse(ID,Salary,PersonID) Values ({ID},{Salary},{PersonID});";
+                query = $"INSERT INTO Nurse(Salary,PersonID) Values ({Salary},{PersonID});";
                 return dbMan.ExecuteNonQuery(query);
             }
-            query = $"INSERT INTO Nurse Values ({ID},{Salary},{PersonID},{SuperID});";
+            query = $"INSERT INTO Nurse Values ({Salary},{PersonID},{SuperID});";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -112,6 +112,67 @@ namespace DBapplication
             string query = $"UPDATE SET WHERE ;";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int UpdateDr(string ID,string Fname,string Lname)
+        {
+            string query;
+            if (Fname == "" && Lname!="")
+            {
+                query = $"UPDATE Person SET LName='{Lname}'  WHERE ID={ID};";
+                return dbMan.ExecuteNonQuery(query);
+            }
+            if (Lname == "" && Fname!="")
+            {
+                query = $"UPDATE Person SET FName='{Fname}' WHERE ID={ID};";
+                return dbMan.ExecuteNonQuery(query);
+            }
+            if (Fname == "" && Lname == "")
+            {
+                return 1;
+            }
+            query = $"UPDATE Person SET FName='{Fname}',LName='{Lname}'  WHERE ID={ID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+
+        public int UpdateDrS(string ID,string Super)
+        {
+            string query = $"UPDATE Doctors SET SuperID={Super}  WHERE ID={ID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateEMpDEp(string ID, string DiD)
+        {
+            string query = $"UPDATE Employee SET DepartmentID={DiD}  WHERE ID={ID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdateRoomRes(string ID, string NID)
+        {
+            string query = $"UPDATE Room SET ResposibleNurseID={NID}  WHERE ID={ID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateNurseSuper(string ID, string Super)
+        {
+            string query = $"UPDATE Nurse SET SuperID={Super}  WHERE ID={ID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateUsername(string username,string newusername)
+        {
+            string query = $"UPDATE Users SET Username='{newusername}' WHERE Username='{username}';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateDepHead(string ID,string DID)
+        {
+            string query = $"UPDATE Department SET DepHead='{DID}' WHERE DepID='{ID}';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int UpdatePass(string username,string pass)
+        {
+            string query = $"UPDATE Users SET passwords='{pass}' WHERE Username='{username}';";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public int Patient_leaves_Room(int patid)
         {
@@ -141,6 +202,11 @@ namespace DBapplication
         public DataTable Select()
         {
             string query = $"SELECT * FROM ;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectUser()
+        {
+            string query = $"SELECT Username,FName,LName FROM Users,Person where PersonID=ID;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -216,12 +282,32 @@ namespace DBapplication
             string query = "SELECT Report FROM Appointment Where PatientID =  " + patid + " and DrID = " + docid + " and Date_time = '" + app + "';";
             return dbMan.ExecuteReader(query);
         }
-
-
-
+        
+        public int getLastAddedPerson()
+        {
+            string query = $"SELECT TOP 1 *  FROM Person ORDER BY ID DESC;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
         public int getUserTypeID(string username)
         {
             string query = $"SELECT UserTypeID FROM Users where Username='{username}';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int getDrPID(string ID)
+        {
+            string query = $"SELECT PersonID FROM Doctors where ID={ID};";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int getNursePID(string ID)
+        {
+            string query = $"SELECT PersonID FROM Nurse where ID={ID};";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int getEmpPID(string ID)
+        {
+            string query = $"SELECT PersonID FROM Employee where ID={ID};";
             return (int)dbMan.ExecuteScalar(query);
         }
         public int getDocID(string username)
@@ -247,11 +333,49 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectAllEmpID()
+        {
+            string query = $"SELECT ID FROM Employee;";
+            return dbMan.ExecuteReader(query);
+        }
+
         public DataTable SelectAllNurseID()
         {
             string query = $"SELECT ID FROM Nurse;";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable SelectAllDrPID()
+        {
+            string query = $"SELECT PersonID FROM Doctors;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllroomID()
+        {
+            string query = $"SELECT ID FROM Room;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllDr()
+        {
+            string query = $"SELECT * FROM Person AS P,Doctors  where PersonID=P.ID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllNurses()
+        {
+            string query = $"SELECT * FROM Person AS P,Nurse  where PersonID=P.ID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllEmps()
+        {
+            string query = $"SELECT * FROM Person AS P,Employee  where PersonID=P.ID;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         public DataTable SelectAllDeps()
         {
             string query = $"SELECT DepName FROM Department;";
@@ -263,6 +387,8 @@ namespace DBapplication
             string query = $"SELECT Tname FROM EmployeeType;";
             return dbMan.ExecuteReader(query);
         }
+
+
         public int Count()
         {
             string query = $"SELECT COUNT() FROM ;";

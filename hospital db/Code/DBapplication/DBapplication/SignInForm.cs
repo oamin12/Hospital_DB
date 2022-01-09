@@ -50,9 +50,10 @@ namespace DBapplication
                 return;
             }
             int usertype = controllerObj.getUserTypeID(txtbox_UserName.Text);
-            int Doc_ID = controllerObj.getDocID(txtbox_UserName.Text);
+            
             if (usertype==1)
             {
+                int Doc_ID = controllerObj.getDocID(txtbox_UserName.Text);
                 DocForm docf = new DocForm(Doc_ID , controllerObj);
                 docf.Show();
             }
