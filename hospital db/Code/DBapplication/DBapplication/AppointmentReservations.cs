@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class ReserveFollowUp_UC : UserControl
+    public partial class AppointmentReservations : UserControl
     {
-        public ReserveFollowUp_UC()
+        public AppointmentReservations()
         {
             InitializeComponent();
         }
