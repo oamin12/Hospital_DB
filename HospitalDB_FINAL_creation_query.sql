@@ -147,7 +147,7 @@ on update cascade--added 15/12
 create table OperationType
 (
 Oname varchar(60) not null,
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID)
 )
 
@@ -332,9 +332,9 @@ create table Operations_Requests
 Operation_ID int IDENTITY(1,1),
 primary key (Operation_ID),
 ---operation rooom mesh ma3moola entity aslan, ha3melha ta7t!!!
-Operation_Location int not null default -1,
-Starts datetime not null,
-Ends datetime not null,
+Operation_Location int  default -1,
+Starts datetime,
+Ends datetime ,
 Patient_ID int not null,
 Operation_Type int not null,
 Doctor_ID int not null,
