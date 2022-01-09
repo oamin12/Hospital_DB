@@ -285,6 +285,12 @@ namespace DBapplication
             string query = "select Date_time from Appointment  where DrID =   "+ docid+ ";";
             return dbMan.ExecuteReader(query);
         }
+
+        //public DataTable docSchedule(int id)
+        //{
+
+        //}
+
         public DataTable SelectPatientPersondata(int patid)
         {
             string query = "SELECT * FROM Person Where ID =  " + patid;
