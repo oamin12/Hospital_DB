@@ -27,10 +27,7 @@ namespace DBapplication
             DoctroPick_combo.DisplayMember = "FName";
             PatientPick_combo.ValueMember = "ID";
 
-            DataTable Otype = controllerObj.SelectOperationType_ID();
-            OperationTypePick_combo.DataSource = Otype;
-            OperationTypePick_combo.DisplayMember = "Oname";
-            OperationTypePick_combo.ValueMember = "ID";
+
 
             DataTable Loc = controllerObj.SelectOpRoom();
             locationCombo.DataSource = Loc;
@@ -46,7 +43,14 @@ namespace DBapplication
             string endDate = EndTimePicker.Value.ToString("yyyyMMdd");
 
             int r = controllerObj.RequestSuregry(Convert.ToInt32(locationCombo.SelectedValue), StartDate, endDate, Convert.ToInt32(PatientPick_combo.SelectedValue), Convert.ToInt32(DoctroPick_combo.SelectedValue));
-
+            if(r == 0)
+            {
+                MessageBox.Show("Reservation not updated");
+            }
+            else
+            {
+                MessageBox.Show("Reservation updated successfully");
+            }
 
         }
     }
