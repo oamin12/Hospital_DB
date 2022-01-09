@@ -26,10 +26,10 @@ primary key (ID)
 
 create table Users
 (
-ID int IDENTITY(1,1),
-primary key (ID),
+
 passwords char(60) not null,
 PersonID int not null,
+primary key (PersonID),
 Username varchar(50) not null,
 UserTypeID int not null,
 foreign key (PersonID) references Person
@@ -233,30 +233,7 @@ on update cascade
 )
 --requesttype TABLE
 --surgeryrequest TABLE
-create table requests
-(
-ID int IDENTITY(1,1),
-primary key (ID),
-Accepted bit default 0,
-DoctorID int,
-foreign key (DoctorID) references Doctors
-on delete no action
-on update no action,
-RoomID int,
-foreign key (RoomID) references Room
-on delete no action
-on update no action,
-PatientID int,
-foreign key (PatientID) references Patient
-on delete no action
-on update no action,
-ScanID int,
-foreign key (ScanID) references ScanLab
-on delete no action
-on update no action,
-reservationdate DateTime
 
-)
 
 create table transactions
 (
@@ -266,7 +243,7 @@ Payment int,
 ID int IDENTITY(1,1),
 requestID int,
 primary key (ID),
-foreign key (requestID) references Requests
+
 on delete no action
 )
 
@@ -309,6 +286,76 @@ foreign key (DrID) references Doctors
 on delete no action 
 on update no action
 )
+create table Room_Requests
+(
+Room_ID int IDENTITY(1,1),
+primary key (Room_ID),
+Nurse_ID int,
+Patient_ID int,
+Accepted bit default 0,
+Foreign key  (Nurse_ID) references Nurse
+on delete set null
+on update cascade,
+Foreign key  (Patient_ID) references Patient
+on delete no action
+on update no action
+)
+
+create table Scan_Requests
+(
+Patient_ID int,
+Datee datetime,
+Scan_ID int,
+Accepted bit default 0,
+foreign key (Patient_ID) references Patient
+on delete cascade
+on update cascade,
+foreign key (Scan_ID) references ScanLab,
+)
+
+create table Appointment_Requests
+(
+Patient_ID int,
+Dr_ID int default -1,
+Timee datetime,
+Appointment_Type varchar(50),
+Accepted bit default 0,
+primary key (Patient_ID,Dr_ID,Timee),
+foreign key (Patient_ID) references Patient
+on delete cascade
+on update cascade,
+foreign key (Dr_ID) references Doctors
+on delete no action 
+on update no action
+)
+
+create table Operations_Requests
+(
+Operation_ID int IDENTITY(1,1),
+primary key (Operation_ID),
+---operation rooom mesh ma3moola entity aslan, ha3melha ta7t!!!
+Operation_Location int not null default -1,
+Starts datetime not null,
+Ends datetime not null,
+Patient_ID int not null,
+Operation_Type int not null,
+Doctor_ID int not null,
+Accepted bit default 0,
+---Nurse lazem relation lewa7daha ma3 operation lw 3ayzeen
+--- kaza nurse fel operation
+foreign key (Patient_ID) references Patient
+on delete cascade
+on update cascade,
+foreign key (Operation_Type) references OperationType
+on update cascade,
+foreign key (Doctor_ID) references Doctors
+on delete no action
+on update no action,
+foreign key (Operation_Location) references OperationRoom
+on delete set default
+on update cascade
+)
+
 -----------------adding foreign key for department--------
 alter table Department add foreign key (DepHead) references Doctors
 ALTER TABLE Appointment ADD Report varchar(500);

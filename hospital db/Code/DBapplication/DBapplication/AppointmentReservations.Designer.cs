@@ -1,7 +1,7 @@
 ﻿
 namespace DBapplication
 {
-    partial class ReserveCheckUP_UC
+    partial class AppointmentReservations
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,12 +31,12 @@ namespace DBapplication
         {
             this.SuspendLayout();
             // 
-            // ReserveCheckUP_UC
+            // AppointmentReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "ReserveCheckUP_UC";
-            this.Size = new System.Drawing.Size(910, 413);
+            this.Name = "AppointmentReservations";
+            this.Size = new System.Drawing.Size(878, 413);
             this.ResumeLayout(false);
 
         }

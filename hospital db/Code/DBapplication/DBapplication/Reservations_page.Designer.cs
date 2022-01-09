@@ -80,7 +80,7 @@ namespace DBapplication
             this.FollowUpsButton.TabIndex = 0;
             this.FollowUpsButton.Text = "Follow Ups";
             this.FollowUpsButton.UseVisualStyleBackColor = false;
-            this.FollowUpsButton.Click += new System.EventHandler(this.FollowUpsButton_Click);
+           // this.FollowUpsButton.Click += new System.EventHandler(this.FollowUpsButton_Click);
             // 
             // CheckUpsButton
             // 
@@ -94,7 +94,7 @@ namespace DBapplication
             this.CheckUpsButton.TabIndex = 1;
             this.CheckUpsButton.Text = "Check Ups";
             this.CheckUpsButton.UseVisualStyleBackColor = false;
-            this.CheckUpsButton.Click += new System.EventHandler(this.CheckUpsButton_Click);
+           // this.CheckUpsButton.Click += new System.EventHandler(this.CheckUpsButton_Click);
             // 
             // SurgeriesButton
             // 
