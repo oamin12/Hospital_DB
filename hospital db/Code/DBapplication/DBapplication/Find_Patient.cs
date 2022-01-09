@@ -22,7 +22,7 @@ namespace DBapplication
 
         private void Find_Patient_Load(object sender, EventArgs e)
         {
-            DataTable dt = controllerobj.SelectPatientsnames();
+            DataTable dt = controllerobj.SelectPatientsnames(myID);
             Name_Combo.DataSource = dt;
             Name_Combo.DisplayMember = "FName";
             Name_Combo.Text = "";

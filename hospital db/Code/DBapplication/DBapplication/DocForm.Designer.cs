@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.schedule_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,14 +66,15 @@
             this.Pat_DOB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // schedule_btn
             // 
-            this.button1.Location = new System.Drawing.Point(14, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Schedule";
-            this.button1.UseVisualStyleBackColor = true;
+            this.schedule_btn.Location = new System.Drawing.Point(14, 12);
+            this.schedule_btn.Name = "schedule_btn";
+            this.schedule_btn.Size = new System.Drawing.Size(121, 28);
+            this.schedule_btn.TabIndex = 0;
+            this.schedule_btn.Text = "Schedule";
+            this.schedule_btn.UseVisualStyleBackColor = true;
+            this.schedule_btn.Click += new System.EventHandler(this.schedule_btn_Click);
             // 
             // label1
             // 
@@ -443,7 +444,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.schedule_btn);
             this.Name = "DocForm";
             this.Text = "2q";
             this.Load += new System.EventHandler(this.DocForm_Load);
@@ -454,7 +455,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button schedule_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

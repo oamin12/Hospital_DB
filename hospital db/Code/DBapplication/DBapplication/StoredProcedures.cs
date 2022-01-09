@@ -5,7 +5,11 @@ using System.Text;
 
 namespace DBapplication
 {
-    class StoredProcedures
+    public class StoredProcedures
     {
+        public static string getdrpatients = "getDrPatients";
+        public static string getappointment= "getAppointments";
+
+        
     }
 }
