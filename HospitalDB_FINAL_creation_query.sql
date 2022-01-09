@@ -243,8 +243,6 @@ Payment int,
 ID int IDENTITY(1,1),
 requestID int,
 primary key (ID),
-
-on delete no action
 )
 
 
