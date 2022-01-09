@@ -41,16 +41,9 @@ namespace DBapplication
             AddUserControl(Ss);
         }
 
-        private void CheckUpsButton_Click(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            ReserveCheckUP_UC checkUP_UC = new ReserveCheckUP_UC();
-            AddUserControl(checkUP_UC);
-        }
 
-        private void FollowUpsButton_Click(object sender, EventArgs e)
-        {
-            ReserveFollowUp_UC reserveFollowUp_UC = new ReserveFollowUp_UC();
-            AddUserControl(reserveFollowUp_UC);
         }
     }
 }
