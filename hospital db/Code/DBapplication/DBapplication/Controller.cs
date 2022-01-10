@@ -222,6 +222,18 @@ namespace DBapplication
             string query = $"SELECT Username,FName,LName FROM Users,Person where PersonID=ID;";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable Selectoptype()
+        {
+            string query = $"SELECT * FROM OperationType;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getoptype(string optype)
+        {
+            string query = $"SELECT ID FROM OperationType where Oname = '" + optype + "';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
 
         public DataTable UserNameExists(string username)
         {
@@ -318,6 +330,16 @@ namespace DBapplication
             Parameters.Add("@docid", docid);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
 
+        }
+
+        public int requestsurg(int docid, int patid , int optype)
+        {
+            string StoredProcedureName = StoredProcedures.reqsurg;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@patid", patid);
+            Parameters.Add("@docid", docid);
+            Parameters.Add("@opid", optype);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
 
 

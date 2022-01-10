@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class Find_Patient : Form
+    public partial class Find_pat : Form
     {
         int myID;
         Controller controllerobj;
-        public Find_Patient(int ID, Controller c)
+        public Find_pat(int ID, Controller c)
         {
             myID = ID;
             InitializeComponent();

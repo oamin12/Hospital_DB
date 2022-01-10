@@ -34,6 +34,7 @@ namespace DBapplication
                 pat_lname.Text = "";
                 pat_sex.Text = "";
                 Pat_DOB.Text = "";
+                surgeryCombo.Text = null;
                 pat_ID_combo.Text = null;
                 Appointments_dates_combo.Text = null;
                 pat_blood_combo.Text = null;
@@ -94,12 +95,16 @@ namespace DBapplication
             
             pat_ID_combo.DataSource = dt;
             pat_ID_combo.DisplayMember = "ID";
+            dt = controllerobj.Selectoptype();
+            surgeryCombo.DataSource = dt;
+            surgeryCombo.DisplayMember = "Oname";
             patblood.Text = "";
             pat_fname.Text = "";
             pat_lname.Text = "";
             pat_sex.Text = "";
             Pat_DOB.Text = "";
             pat_ID_combo.Text = null;
+            surgeryCombo.Text = null;
             Appointments_dates_combo.Text = null;
             pat_blood_combo.Text = null;
            Allergies_combo.Text = null;
@@ -227,7 +232,7 @@ namespace DBapplication
 
         private void PatientSearch_Click(object sender, EventArgs e)
         {
-            Find_Patient findp = new Find_Patient(myID, controllerobj);
+            Find_pat findp = new Find_pat(myID, controllerobj);
             findp.Show();
         }
 
@@ -241,6 +246,21 @@ namespace DBapplication
         {
             DocSchedule docs = new DocSchedule(myID , controllerobj);
             docs.Show();
+        }
+
+        private void req_surgery_Click(object sender, EventArgs e)
+        {
+            string asd = pat_ID_combo.Text;
+            if (String.IsNullOrEmpty(asd)) { MessageBox.Show("No patient Choosed"); return; }
+            int.TryParse(asd, out patid);
+            if (string.IsNullOrEmpty(surgeryCombo.Text)) { MessageBox.Show("no surgey was chosen");return; }
+            int x = controllerobj.getoptype(surgeryCombo.Text);
+          
+            int y = controllerobj.requestsurg(myID , patid , x);
+            if (y != 0) { MessageBox.Show("request done") ; }
+
+
+
         }
     }
 }

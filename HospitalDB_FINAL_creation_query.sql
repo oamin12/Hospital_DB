@@ -332,7 +332,7 @@ create table Operations_Requests
 Operation_ID int IDENTITY(1,1),
 primary key (Operation_ID),
 ---operation rooom mesh ma3moola entity aslan, ha3melha ta7t!!!
-Operation_Location int  default -1,
+Operation_Location int ,
 Starts datetime,
 Ends datetime ,
 Patient_ID int not null,

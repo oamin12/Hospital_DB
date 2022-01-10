@@ -12,6 +12,7 @@ namespace DBapplication
         public static string checkappointmentexist = "checkappointmentandDr";
         public static string updateappoint = "updateappointment";
         public static string cancelappoint = "cancelappointment";
+        public static string reqsurg = "requestsurgery";
 
 
     }

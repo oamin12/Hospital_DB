@@ -1,6 +1,6 @@
 ﻿namespace DBapplication
 {
-    partial class Find_Patient
+    partial class Find_pat
     {
         /// <summary>
         /// Required designer variable.
@@ -47,32 +47,35 @@
             // 
             // GetId_btn
             // 
-            this.GetId_btn.Location = new System.Drawing.Point(77, 52);
+            this.GetId_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetId_btn.Location = new System.Drawing.Point(563, 30);
             this.GetId_btn.Name = "GetId_btn";
-            this.GetId_btn.Size = new System.Drawing.Size(91, 39);
+            this.GetId_btn.Size = new System.Drawing.Size(126, 39);
             this.GetId_btn.TabIndex = 1;
-            this.GetId_btn.Text = "GetID";
+            this.GetId_btn.Text = "Get ID";
             this.GetId_btn.UseVisualStyleBackColor = true;
             this.GetId_btn.Click += new System.EventHandler(this.GetId_btn_Click);
             // 
             // Name_Combo
             // 
             this.Name_Combo.FormattingEnabled = true;
-            this.Name_Combo.Location = new System.Drawing.Point(68, 6);
+            this.Name_Combo.Location = new System.Drawing.Point(325, 35);
             this.Name_Combo.Name = "Name_Combo";
-            this.Name_Combo.Size = new System.Drawing.Size(121, 24);
+            this.Name_Combo.Size = new System.Drawing.Size(197, 24);
             this.Name_Combo.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label1.Location = new System.Drawing.Point(217, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.Size = new System.Drawing.Size(75, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name :";
             // 
-            // Find_Patient
+            // Find_pat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,8 +84,8 @@
             this.Controls.Add(this.Name_Combo);
             this.Controls.Add(this.GetId_btn);
             this.Controls.Add(this.Patient_ID_Data);
-            this.Name = "Find_Patient";
-            this.Text = "Find_Patient";
+            this.Name = "Find_pat";
+            this.Text = "Search My Patients";
             this.Load += new System.EventHandler(this.Find_Patient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Patient_ID_Data)).EndInit();
             this.ResumeLayout(false);

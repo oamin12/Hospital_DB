@@ -58,10 +58,12 @@
             this.UpdateRep_button = new System.Windows.Forms.Button();
             this.PatientSearch = new System.Windows.Forms.Button();
             this.Dismiss_Patient_button = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.req_surgery = new System.Windows.Forms.Button();
             this.patblood = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Pat_DOB = new System.Windows.Forms.Label();
+            this.surgeryCombo = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // schedule_btn
@@ -338,22 +340,23 @@
             // 
             // Dismiss_Patient_button
             // 
-            this.Dismiss_Patient_button.Location = new System.Drawing.Point(14, 529);
+            this.Dismiss_Patient_button.Location = new System.Drawing.Point(370, 571);
             this.Dismiss_Patient_button.Name = "Dismiss_Patient_button";
-            this.Dismiss_Patient_button.Size = new System.Drawing.Size(98, 28);
+            this.Dismiss_Patient_button.Size = new System.Drawing.Size(129, 40);
             this.Dismiss_Patient_button.TabIndex = 33;
             this.Dismiss_Patient_button.Text = "Dismiss";
             this.Dismiss_Patient_button.UseVisualStyleBackColor = true;
             this.Dismiss_Patient_button.Click += new System.EventHandler(this.Dismiss_Patient_button_Click);
             // 
-            // button8
+            // req_surgery
             // 
-            this.button8.Location = new System.Drawing.Point(196, 529);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(138, 28);
-            this.button8.TabIndex = 34;
-            this.button8.Text = "Request Surgery";
-            this.button8.UseVisualStyleBackColor = true;
+            this.req_surgery.Location = new System.Drawing.Point(370, 513);
+            this.req_surgery.Name = "req_surgery";
+            this.req_surgery.Size = new System.Drawing.Size(129, 43);
+            this.req_surgery.TabIndex = 34;
+            this.req_surgery.Text = "Request Surgery";
+            this.req_surgery.UseVisualStyleBackColor = true;
+            this.req_surgery.Click += new System.EventHandler(this.req_surgery_Click);
             // 
             // patblood
             // 
@@ -384,15 +387,35 @@
             this.Pat_DOB.TabIndex = 39;
             this.Pat_DOB.Text = "pat bod";
             // 
+            // surgeryCombo
+            // 
+            this.surgeryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.surgeryCombo.FormattingEnabled = true;
+            this.surgeryCombo.Location = new System.Drawing.Point(137, 523);
+            this.surgeryCombo.Name = "surgeryCombo";
+            this.surgeryCombo.Size = new System.Drawing.Size(121, 24);
+            this.surgeryCombo.TabIndex = 40;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(30, 526);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 16);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "SurgeryType";
+            // 
             // DocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 569);
+            this.ClientSize = new System.Drawing.Size(1394, 642);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.surgeryCombo);
             this.Controls.Add(this.Pat_DOB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.patblood);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.req_surgery);
             this.Controls.Add(this.Dismiss_Patient_button);
             this.Controls.Add(this.PatientSearch);
             this.Controls.Add(this.UpdateRep_button);
@@ -424,7 +447,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.schedule_btn);
             this.Name = "DocForm";
-            this.Text = "2q";
+            this.Text = "Doctor";
             this.Load += new System.EventHandler(this.DocForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -463,9 +486,11 @@
         private System.Windows.Forms.Button UpdateRep_button;
         private System.Windows.Forms.Button PatientSearch;
         private System.Windows.Forms.Button Dismiss_Patient_button;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button req_surgery;
         private System.Windows.Forms.Label patblood;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Pat_DOB;
+        private System.Windows.Forms.ComboBox surgeryCombo;
+        private System.Windows.Forms.Label label11;
     }
 }
