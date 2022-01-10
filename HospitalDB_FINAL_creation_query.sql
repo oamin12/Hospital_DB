@@ -276,7 +276,7 @@ PatientID int,
 DrID int default -1,
 Date_time datetime,
 Atype varchar(50),
-primary key (PatientID,DrID,Date_time),
+primary key (DrID,Date_time),
 foreign key (PatientID) references Patient
 on delete cascade
 on update cascade,
