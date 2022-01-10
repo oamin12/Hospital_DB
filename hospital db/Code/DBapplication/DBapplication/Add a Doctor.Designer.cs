@@ -32,14 +32,12 @@ namespace DBapplication
             this.label1 = new System.Windows.Forms.Label();
             this.txtbox_Fname = new System.Windows.Forms.TextBox();
             this.txtbox_Lname = new System.Windows.Forms.TextBox();
-            this.txtbox_ID = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmbo_Gender = new System.Windows.Forms.ComboBox();
             this.cmbo_Dep = new System.Windows.Forms.ComboBox();
             this.cmbo_super = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,13 +72,6 @@ namespace DBapplication
             this.txtbox_Lname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Lname.TabIndex = 11;
             this.txtbox_Lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Lname_KeyPress);
-            // 
-            // txtbox_ID
-            // 
-            this.txtbox_ID.Location = new System.Drawing.Point(18, 200);
-            this.txtbox_ID.Name = "txtbox_ID";
-            this.txtbox_ID.Size = new System.Drawing.Size(169, 22);
-            this.txtbox_ID.TabIndex = 12;
             // 
             // dateTimePicker1
             // 
@@ -138,15 +129,6 @@ namespace DBapplication
             this.label3.TabIndex = 18;
             this.label3.Text = "Last Name";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 17);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "ID";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -195,16 +177,16 @@ namespace DBapplication
             // 
             // txtbox_salary
             // 
-            this.txtbox_salary.Location = new System.Drawing.Point(220, 200);
+            this.txtbox_salary.Location = new System.Drawing.Point(18, 200);
             this.txtbox_salary.Name = "txtbox_salary";
-            this.txtbox_salary.Size = new System.Drawing.Size(169, 22);
+            this.txtbox_salary.Size = new System.Drawing.Size(168, 22);
             this.txtbox_salary.TabIndex = 25;
             this.txtbox_salary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_salary_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(232, 180);
+            this.label9.Location = new System.Drawing.Point(30, 180);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 26;
@@ -222,14 +204,12 @@ namespace DBapplication
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbo_super);
             this.Controls.Add(this.cmbo_Dep);
             this.Controls.Add(this.cmbo_Gender);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtbox_ID);
             this.Controls.Add(this.txtbox_Lname);
             this.Controls.Add(this.txtbox_Fname);
             this.Controls.Add(this.label1);
@@ -246,14 +226,12 @@ namespace DBapplication
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbox_Fname;
         private System.Windows.Forms.TextBox txtbox_Lname;
-        private System.Windows.Forms.TextBox txtbox_ID;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cmbo_Gender;
         private System.Windows.Forms.ComboBox cmbo_Dep;
         private System.Windows.Forms.ComboBox cmbo_super;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

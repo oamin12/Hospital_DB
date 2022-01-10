@@ -41,7 +41,7 @@ namespace DBapplication
             // ReserveScanButton
             // 
             this.ReserveScanButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReserveScanButton.Location = new System.Drawing.Point(357, 275);
+            this.ReserveScanButton.Location = new System.Drawing.Point(325, 286);
             this.ReserveScanButton.Name = "ReserveScanButton";
             this.ReserveScanButton.Size = new System.Drawing.Size(212, 60);
             this.ReserveScanButton.TabIndex = 9;
@@ -52,7 +52,7 @@ namespace DBapplication
             // PickScan_Combobox
             // 
             this.PickScan_Combobox.FormattingEnabled = true;
-            this.PickScan_Combobox.Location = new System.Drawing.Point(420, 138);
+            this.PickScan_Combobox.Location = new System.Drawing.Point(389, 142);
             this.PickScan_Combobox.Name = "PickScan_Combobox";
             this.PickScan_Combobox.Size = new System.Drawing.Size(260, 24);
             this.PickScan_Combobox.TabIndex = 8;
@@ -61,18 +61,17 @@ namespace DBapplication
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 140);
+            this.label2.Location = new System.Drawing.Point(193, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 22);
             this.label2.TabIndex = 7;
             this.label2.Text = "Scan type";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(224, 75);
+            this.label1.Location = new System.Drawing.Point(193, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 22);
             this.label1.TabIndex = 6;
@@ -81,14 +80,14 @@ namespace DBapplication
             // PickPatient_ComboBox
             // 
             this.PickPatient_ComboBox.FormattingEnabled = true;
-            this.PickPatient_ComboBox.Location = new System.Drawing.Point(420, 75);
+            this.PickPatient_ComboBox.Location = new System.Drawing.Point(389, 79);
             this.PickPatient_ComboBox.Name = "PickPatient_ComboBox";
             this.PickPatient_ComboBox.Size = new System.Drawing.Size(260, 24);
             this.PickPatient_ComboBox.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(420, 204);
+            this.dateTimePicker1.Location = new System.Drawing.Point(389, 208);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(260, 22);
             this.dateTimePicker1.TabIndex = 10;
@@ -97,7 +96,7 @@ namespace DBapplication
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(224, 205);
+            this.label3.Location = new System.Drawing.Point(193, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 22);
             this.label3.TabIndex = 11;
@@ -115,7 +114,7 @@ namespace DBapplication
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PickPatient_ComboBox);
             this.Name = "Scan_Res";
-            this.Size = new System.Drawing.Size(910, 413);
+            this.Size = new System.Drawing.Size(878, 413);
             this.ResumeLayout(false);
             this.PerformLayout();
 

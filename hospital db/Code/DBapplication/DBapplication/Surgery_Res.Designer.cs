@@ -29,33 +29,23 @@ namespace DBapplication
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
             this.ReserveSuregeryButton = new System.Windows.Forms.Button();
             this.DoctroPick_combo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PatientPick_combo = new System.Windows.Forms.ComboBox();
-            this.OperationTypePick_combo = new System.Windows.Forms.ComboBox();
             this.StartTimePicker = new System.Windows.Forms.DateTimePicker();
             this.EndTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.locationCombo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(50, 206);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 22);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Operation type";
             // 
             // ReserveSuregeryButton
             // 
             this.ReserveSuregeryButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReserveSuregeryButton.Location = new System.Drawing.Point(360, 276);
+            this.ReserveSuregeryButton.Location = new System.Drawing.Point(325, 286);
             this.ReserveSuregeryButton.Name = "ReserveSuregeryButton";
             this.ReserveSuregeryButton.Size = new System.Drawing.Size(212, 60);
             this.ReserveSuregeryButton.TabIndex = 16;
@@ -68,7 +58,7 @@ namespace DBapplication
             this.DoctroPick_combo.FormattingEnabled = true;
             this.DoctroPick_combo.Location = new System.Drawing.Point(198, 139);
             this.DoctroPick_combo.Name = "DoctroPick_combo";
-            this.DoctroPick_combo.Size = new System.Drawing.Size(260, 24);
+            this.DoctroPick_combo.Size = new System.Drawing.Size(238, 24);
             this.DoctroPick_combo.TabIndex = 15;
             // 
             // label2
@@ -96,29 +86,21 @@ namespace DBapplication
             this.PatientPick_combo.FormattingEnabled = true;
             this.PatientPick_combo.Location = new System.Drawing.Point(198, 79);
             this.PatientPick_combo.Name = "PatientPick_combo";
-            this.PatientPick_combo.Size = new System.Drawing.Size(260, 24);
+            this.PatientPick_combo.Size = new System.Drawing.Size(238, 24);
             this.PatientPick_combo.TabIndex = 12;
-            // 
-            // OperationTypePick_combo
-            // 
-            this.OperationTypePick_combo.FormattingEnabled = true;
-            this.OperationTypePick_combo.Location = new System.Drawing.Point(198, 206);
-            this.OperationTypePick_combo.Name = "OperationTypePick_combo";
-            this.OperationTypePick_combo.Size = new System.Drawing.Size(260, 24);
-            this.OperationTypePick_combo.TabIndex = 19;
             // 
             // StartTimePicker
             // 
             this.StartTimePicker.Location = new System.Drawing.Point(607, 78);
             this.StartTimePicker.Name = "StartTimePicker";
-            this.StartTimePicker.Size = new System.Drawing.Size(226, 22);
+            this.StartTimePicker.Size = new System.Drawing.Size(238, 22);
             this.StartTimePicker.TabIndex = 20;
             // 
             // EndTimePicker
             // 
             this.EndTimePicker.Location = new System.Drawing.Point(607, 139);
             this.EndTimePicker.Name = "EndTimePicker";
-            this.EndTimePicker.Size = new System.Drawing.Size(226, 22);
+            this.EndTimePicker.Size = new System.Drawing.Size(238, 22);
             this.EndTimePicker.TabIndex = 21;
             // 
             // label4
@@ -141,16 +123,34 @@ namespace DBapplication
             this.label5.TabIndex = 22;
             this.label5.Text = "Start time";
             // 
+            // locationCombo
+            // 
+            this.locationCombo.FormattingEnabled = true;
+            this.locationCombo.Location = new System.Drawing.Point(198, 203);
+            this.locationCombo.Name = "locationCombo";
+            this.locationCombo.Size = new System.Drawing.Size(238, 24);
+            this.locationCombo.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(50, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 22);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Room";
+            // 
             // Surgery_Res
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.locationCombo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.EndTimePicker);
             this.Controls.Add(this.StartTimePicker);
-            this.Controls.Add(this.OperationTypePick_combo);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.ReserveSuregeryButton);
             this.Controls.Add(this.DoctroPick_combo);
             this.Controls.Add(this.label2);
@@ -164,17 +164,16 @@ namespace DBapplication
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ReserveSuregeryButton;
         private System.Windows.Forms.ComboBox DoctroPick_combo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox PatientPick_combo;
-        private System.Windows.Forms.ComboBox OperationTypePick_combo;
         private System.Windows.Forms.DateTimePicker StartTimePicker;
         private System.Windows.Forms.DateTimePicker EndTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox locationCombo;
+        private System.Windows.Forms.Label label6;
     }
 }

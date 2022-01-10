@@ -11,7 +11,7 @@ namespace DBapplication
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=DESKTOP-MC67K9O;Initial Catalog=DB_Project_Hospital_DataBase;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-GDR3OLJ;Initial Catalog=DB_Project_Hospital_DataBase;Integrated Security=True";
 
         SqlConnection myConnection;
 
