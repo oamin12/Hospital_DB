@@ -43,7 +43,6 @@ namespace DBapplication
             this.Patient_Pick_combobox.Name = "Patient_Pick_combobox";
             this.Patient_Pick_combobox.Size = new System.Drawing.Size(260, 24);
             this.Patient_Pick_combobox.TabIndex = 0;
-//            this.Patient_Pick_combobox.SelectedIndexChanged += new System.EventHandler(this.Patient_Pick_combobox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -54,7 +53,6 @@ namespace DBapplication
             this.label1.Size = new System.Drawing.Size(127, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Choose patient";
-        //    this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -65,7 +63,6 @@ namespace DBapplication
             this.label2.Size = new System.Drawing.Size(97, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pick Room";
-  //          this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // RoomPick_Combobox
             // 
@@ -74,7 +71,6 @@ namespace DBapplication
             this.RoomPick_Combobox.Name = "RoomPick_Combobox";
             this.RoomPick_Combobox.Size = new System.Drawing.Size(260, 24);
             this.RoomPick_Combobox.TabIndex = 3;
-    //        this.RoomPick_Combobox.SelectedIndexChanged += new System.EventHandler(this.RoomPick_Combobox_SelectedIndexChanged);
             // 
             // Reserve_bed_button
             // 
@@ -98,7 +94,7 @@ namespace DBapplication
             this.Controls.Add(this.Patient_Pick_combobox);
             this.Name = "ROOM_RES";
             this.Size = new System.Drawing.Size(878, 413);
-      //      this.Load += new System.EventHandler(this.ROOM_RES_Load);
+            this.Load += new System.EventHandler(this.ROOM_RES_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
