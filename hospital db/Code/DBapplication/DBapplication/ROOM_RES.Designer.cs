@@ -39,16 +39,16 @@ namespace DBapplication
             // Patient_Pick_combobox
             // 
             this.Patient_Pick_combobox.FormattingEnabled = true;
-            this.Patient_Pick_combobox.Location = new System.Drawing.Point(363, 90);
+            this.Patient_Pick_combobox.Location = new System.Drawing.Point(402, 84);
             this.Patient_Pick_combobox.Name = "Patient_Pick_combobox";
-            this.Patient_Pick_combobox.Size = new System.Drawing.Size(228, 24);
+            this.Patient_Pick_combobox.Size = new System.Drawing.Size(260, 24);
             this.Patient_Pick_combobox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(192, 90);
+            this.label1.Location = new System.Drawing.Point(206, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 22);
             this.label1.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace DBapplication
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(192, 178);
+            this.label2.Location = new System.Drawing.Point(206, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 22);
             this.label2.TabIndex = 2;
@@ -67,17 +67,17 @@ namespace DBapplication
             // RoomPick_Combobox
             // 
             this.RoomPick_Combobox.FormattingEnabled = true;
-            this.RoomPick_Combobox.Location = new System.Drawing.Point(363, 179);
+            this.RoomPick_Combobox.Location = new System.Drawing.Point(402, 173);
             this.RoomPick_Combobox.Name = "RoomPick_Combobox";
-            this.RoomPick_Combobox.Size = new System.Drawing.Size(228, 24);
+            this.RoomPick_Combobox.Size = new System.Drawing.Size(260, 24);
             this.RoomPick_Combobox.TabIndex = 3;
             // 
             // Reserve_bed_button
             // 
             this.Reserve_bed_button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reserve_bed_button.Location = new System.Drawing.Point(296, 292);
+            this.Reserve_bed_button.Location = new System.Drawing.Point(325, 286);
             this.Reserve_bed_button.Name = "Reserve_bed_button";
-            this.Reserve_bed_button.Size = new System.Drawing.Size(186, 60);
+            this.Reserve_bed_button.Size = new System.Drawing.Size(213, 60);
             this.Reserve_bed_button.TabIndex = 4;
             this.Reserve_bed_button.Text = "Reserve Bed";
             this.Reserve_bed_button.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@ namespace DBapplication
             // 
             // ROOM_RES
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Reserve_bed_button);
             this.Controls.Add(this.RoomPick_Combobox);
@@ -93,7 +93,7 @@ namespace DBapplication
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Patient_Pick_combobox);
             this.Name = "ROOM_RES";
-            this.Size = new System.Drawing.Size(796, 413);
+            this.Size = new System.Drawing.Size(878, 413);
             this.Load += new System.EventHandler(this.ROOM_RES_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

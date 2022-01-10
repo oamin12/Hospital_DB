@@ -29,16 +29,19 @@ namespace DBapplication
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ReserveScanButton_Click(object sender, EventArgs e)
         {
-            string theDate = dateTimePicker1.Value.ToString("yyyy-MM-dd hh':'ss tt");
-            int r = controllerObj.RequestScan(Convert.ToInt32(PickScan_Combobox.Text),Convert.ToInt32(PickPatient_ComboBox.Text), theDate);
-
+            string theDate = dateTimePicker1.Value.ToString("yyyyMMdd");
+            int r = controllerObj.RequestScan(Convert.ToInt32(PickPatient_ComboBox.SelectedValue.GetHashCode()), theDate, Convert.ToInt32(PickScan_Combobox.SelectedValue.GetHashCode()));
+            if(r == 0 )
+            {
+                MessageBox.Show("Request not added");
+            }
+            else
+            {
+                MessageBox.Show("Scan Request added successfully");
+            }
         }
+
     }
 }

@@ -40,17 +40,10 @@ namespace DBapplication
             Surgery_Res Ss = new Surgery_Res();
             AddUserControl(Ss);
         }
-
-        private void CheckUpsButton_Click(object sender, EventArgs e)
+        private void Appointment_Click(object sender, EventArgs e)
         {
-            ReserveCheckUP_UC checkUP_UC = new ReserveCheckUP_UC();
-            AddUserControl(checkUP_UC);
-        }
-
-        private void FollowUpsButton_Click(object sender, EventArgs e)
-        {
-            ReserveFollowUp_UC reserveFollowUp_UC = new ReserveFollowUp_UC();
-            AddUserControl(reserveFollowUp_UC);
+            AppointmentReservations AR = new AppointmentReservations();
+            AddUserControl(AR);
         }
     }
 }

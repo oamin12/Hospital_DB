@@ -36,11 +36,7 @@ namespace DBapplication
                 MessageBox.Show("please enter The Last Name");
                 return;
             }
-            if (txtbox_ID.Text == "")
-            {
-                MessageBox.Show("please enter a ID");
-                return;
-            }
+            
             if (txtbox_salary.Text == "")
             {
                 MessageBox.Show("please enter a Salary");
@@ -53,28 +49,14 @@ namespace DBapplication
             }
             int trial;
 
-            bool res = Int32.TryParse(txtbox_ID.Text, out trial);
-            if (!res)
-            {
-                MessageBox.Show("Incorrect Input, Enter a number in ID");
-                return;
-            }
-
-            res = Int32.TryParse(txtbox_salary.Text, out trial);
+            bool res = Int32.TryParse(txtbox_salary.Text, out trial);
             if (!res)
             {
                 MessageBox.Show("Incorrect Input, Enter a number in Salary");
                 return;
             }
 
-            DataTable dt = controllerObj.IDExists(txtbox_ID.Text);
-            // int usern = dt.Rows.Count;
-            if (dt != null)
-            {
-                MessageBox.Show("ID already exists");
-                return;
-            }
-            int result1 = controllerObj.InsertAperson(txtbox_Fname.Text, txtbox_Lname.Text, txtbox_ID.Text, dateTimePicker1.Text, cmbo_Gender.Text);
+            int result1 = controllerObj.InsertAperson(txtbox_Fname.Text, txtbox_Lname.Text, dateTimePicker1.Text, cmbo_Gender.Text);
             if (result1 == 0)
             {
                 MessageBox.Show("The insertion of a new Employee failed");
@@ -117,7 +99,9 @@ namespace DBapplication
             {
                 DepartID = "5";
             }
-            int result2 = controllerObj.InsertEmployee(txtbox_ID.Text, txtbox_ID.Text, EmpType, txtbox_salary.Text, DepartID);
+            int perID = controllerObj.getLastAddedPerson();
+
+            int result2 = controllerObj.InsertEmployee( perID.ToString(), EmpType, txtbox_salary.Text, DepartID);
             if (result2 == 0)
             {
                 MessageBox.Show("The insertion of a new Employee failed");

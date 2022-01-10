@@ -27,17 +27,31 @@ namespace DBapplication
             DoctroPick_combo.DisplayMember = "FName";
             PatientPick_combo.ValueMember = "ID";
 
-            DataTable Otype = controllerObj.SelectOperationType_ID();
-            OperationTypePick_combo.DataSource = Otype;
-            OperationTypePick_combo.DisplayMember = "Oname";
-            OperationTypePick_combo.ValueMember = "ID";
+
+
+            DataTable Loc = controllerObj.SelectOpRoom();
+            locationCombo.DataSource = Loc;
+            locationCombo.DisplayMember = "RoomNumber";
+            locationCombo.ValueMember = "ID";
+
 
         }
 
         private void ReserveSuregeryButton_Click(object sender, EventArgs e)
         {
-            string StartDate = StartTimePicker.Value.ToString("dd-MM-yyyy hh':'ss tt");
-            string endDate = EndTimePicker.Value.ToString("yyyy-MM-dd hh':'ss tt");
+            string StartDate = StartTimePicker.Value.ToString("yyyyMMdd");
+            string endDate = EndTimePicker.Value.ToString("yyyyMMdd");
+
+            int r = controllerObj.RequestSuregry(Convert.ToInt32(locationCombo.SelectedValue), StartDate, endDate, Convert.ToInt32(PatientPick_combo.SelectedValue), Convert.ToInt32(((DataRowView)DoctroPick_combo.SelectedValue)["ID"]));
+            if(r == 0)
+            {
+                MessageBox.Show("Reservation not updated");
+            }
+            else
+            {
+                MessageBox.Show("Reservation updated successfully");
+            }
+
         }
     }
 }

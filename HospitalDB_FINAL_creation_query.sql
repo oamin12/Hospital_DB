@@ -147,7 +147,7 @@ on update cascade--added 15/12
 create table OperationType
 (
 Oname varchar(60) not null,
-ID int,
+ID int IDENTITY(1,1),
 primary key (ID)
 )
 
@@ -243,8 +243,6 @@ Payment int,
 ID int IDENTITY(1,1),
 requestID int,
 primary key (ID),
-
-on delete no action
 )
 
 
@@ -278,7 +276,7 @@ PatientID int,
 DrID int default -1,
 Date_time datetime,
 Atype varchar(50),
-primary key (PatientID,DrID,Date_time),
+primary key (DrID,Date_time),
 foreign key (PatientID) references Patient
 on delete cascade
 on update cascade,
@@ -288,7 +286,7 @@ on update no action
 )
 create table Room_Requests
 (
-Room_ID int IDENTITY(1,1),
+Room_ID int,
 primary key (Room_ID),
 Nurse_ID int,
 Patient_ID int,
@@ -334,9 +332,9 @@ create table Operations_Requests
 Operation_ID int IDENTITY(1,1),
 primary key (Operation_ID),
 ---operation rooom mesh ma3moola entity aslan, ha3melha ta7t!!!
-Operation_Location int not null default -1,
-Starts datetime not null,
-Ends datetime not null,
+Operation_Location int  default -1,
+Starts datetime,
+Ends datetime ,
 Patient_ID int not null,
 Operation_Type int not null,
 Doctor_ID int not null,

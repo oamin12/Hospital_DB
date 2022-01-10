@@ -11,6 +11,7 @@ namespace DBapplication
 {
     public partial class DocForm : Form
     {
+
         int myID;
         int patid = 0;
         int patpersonid;
@@ -18,7 +19,7 @@ namespace DBapplication
         public DocForm(int ID , Controller c)
         {
             myID = ID;
-            controllerobj = c;
+            controllerobj = new Controller();
             InitializeComponent();
         }
 
@@ -210,7 +211,6 @@ namespace DBapplication
             if (String.IsNullOrEmpty(asd)) { MessageBox.Show("No patient Choosed"); return; }
 
             int.TryParse(asd, out patid);
-            controllerobj.DeletePatientsRequests(patid);
             controllerobj.DeletePatientsAppointments(patid);
             controllerobj.DeletePatientsOperations(patid);
             controllerobj.DeletePatientsScans(patid);
@@ -229,6 +229,18 @@ namespace DBapplication
         {
             Find_Patient findp = new Find_Patient(myID, controllerobj);
             findp.Show();
+        }
+
+        public DocForm(int ID)
+        {
+
+            InitializeComponent();
+        }
+
+        private void schedule_btn_Click(object sender, EventArgs e)
+        {
+            DocSchedule docs = new DocSchedule(myID , controllerobj);
+            docs.Show();
         }
     }
 }

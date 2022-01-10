@@ -5,7 +5,14 @@ using System.Text;
 
 namespace DBapplication
 {
-    class StoredProcedures
+    public class StoredProcedures
     {
+        public static string getdrpatients = "getDrPatients";
+        public static string getappointment= "getAppointments";
+        public static string checkappointmentexist = "checkappointmentandDr";
+        public static string updateappoint = "updateappointment";
+        public static string cancelappoint = "cancelappointment";
+
+
     }
 }

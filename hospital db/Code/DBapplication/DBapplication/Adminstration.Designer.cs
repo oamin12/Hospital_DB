@@ -38,6 +38,7 @@ namespace DBapplication
             this.Edit_doctor = new System.Windows.Forms.Button();
             this.Edit_User = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Add_User
@@ -103,6 +104,7 @@ namespace DBapplication
             this.Edit_employee.TabIndex = 7;
             this.Edit_employee.Text = "Edit an Employee";
             this.Edit_employee.UseVisualStyleBackColor = false;
+            this.Edit_employee.Click += new System.EventHandler(this.Edit_employee_Click);
             // 
             // Edit_Nurse
             // 
@@ -115,6 +117,7 @@ namespace DBapplication
             this.Edit_Nurse.TabIndex = 6;
             this.Edit_Nurse.Text = "Edit a Nurse";
             this.Edit_Nurse.UseVisualStyleBackColor = false;
+            this.Edit_Nurse.Click += new System.EventHandler(this.Edit_Nurse_Click);
             // 
             // Edit_doctor
             // 
@@ -127,6 +130,7 @@ namespace DBapplication
             this.Edit_doctor.TabIndex = 5;
             this.Edit_doctor.Text = "Edit a Doctor";
             this.Edit_doctor.UseVisualStyleBackColor = false;
+            this.Edit_doctor.Click += new System.EventHandler(this.Edit_doctor_Click);
             // 
             // Edit_User
             // 
@@ -139,6 +143,7 @@ namespace DBapplication
             this.Edit_User.TabIndex = 4;
             this.Edit_User.Text = "Edit a User";
             this.Edit_User.UseVisualStyleBackColor = false;
+            this.Edit_User.Click += new System.EventHandler(this.Edit_User_Click);
             // 
             // label1
             // 
@@ -151,11 +156,25 @@ namespace DBapplication
             this.label1.Text = "Adminstration";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(220, 350);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(384, 59);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Show Stats";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Adminstration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Edit_employee);
             this.Controls.Add(this.Edit_Nurse);
@@ -184,5 +203,6 @@ namespace DBapplication
         private System.Windows.Forms.Button Edit_doctor;
         private System.Windows.Forms.Button Edit_User;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

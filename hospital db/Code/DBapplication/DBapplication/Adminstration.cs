@@ -49,5 +49,35 @@ namespace DBapplication
             Add_employee Emp = new Add_employee();
             Emp.Show();
         }
+
+        private void Edit_User_Click(object sender, EventArgs e)
+        {
+            Edit_User User = new Edit_User();
+            User.Show();
+        }
+
+        private void Edit_doctor_Click(object sender, EventArgs e)
+        {
+            Edit_Doctor DR = new Edit_Doctor();
+            DR.Show();
+        }
+
+        private void Edit_Nurse_Click(object sender, EventArgs e)
+        {
+            Edit_Nurse nr = new Edit_Nurse();
+            nr.Show();
+        }
+
+        private void Edit_employee_Click(object sender, EventArgs e)
+        {
+            Edit_emp emp = new Edit_emp();
+            emp.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Show_stats stats = new Show_stats();
+            stats.Show();
+        }
     }
 }

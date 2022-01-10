@@ -11,7 +11,7 @@ namespace DBapplication
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=localhost;Initial Catalog=SPJ_DB_Lab4;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-GDR3OLJ;Initial Catalog=DB_Project_Hospital_DataBase;Integrated Security=True";
 
         SqlConnection myConnection;
 
@@ -90,6 +90,67 @@ namespace DBapplication
                 return 0;
             }
         }
+
+        public int ExecuteNonQuery(string storedProcedureName, Dictionary<string, object> parameters)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                foreach (KeyValuePair<string, object> Param in parameters)
+                {
+                    myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                }
+
+                return myCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+        }
+
+
+        public DataTable ExecuteReader(string storedProcedureName, Dictionary<string, object> parameters)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                if (parameters != null)
+                {
+                    foreach (KeyValuePair<string, object> Param in parameters)
+                    {
+                        myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                    }
+                }
+
+                SqlDataReader reader = myCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    reader.Close();
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+
 
         public void CloseConnection()
         {
