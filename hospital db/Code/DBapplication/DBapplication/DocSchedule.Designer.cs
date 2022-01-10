@@ -34,13 +34,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.show_schedule_button = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.postpone_button = new System.Windows.Forms.Button();
+            this.cancel_button = new System.Windows.Forms.Button();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.appointments_combo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.newdate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.schedulegrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,18 +58,16 @@
             // 
             // strt_date
             // 
-            this.strt_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.strt_date.Location = new System.Drawing.Point(568, 14);
             this.strt_date.Name = "strt_date";
-            this.strt_date.Size = new System.Drawing.Size(200, 22);
+            this.strt_date.Size = new System.Drawing.Size(264, 22);
             this.strt_date.TabIndex = 3;
             // 
             // final_date
             // 
-            this.final_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.final_date.Location = new System.Drawing.Point(568, 70);
             this.final_date.Name = "final_date";
-            this.final_date.Size = new System.Drawing.Size(200, 22);
+            this.final_date.Size = new System.Drawing.Size(264, 22);
             this.final_date.TabIndex = 5;
             // 
             // label1
@@ -90,31 +90,33 @@
             // 
             // show_schedule_button
             // 
-            this.show_schedule_button.Location = new System.Drawing.Point(526, 126);
+            this.show_schedule_button.Location = new System.Drawing.Point(568, 126);
             this.show_schedule_button.Name = "show_schedule_button";
-            this.show_schedule_button.Size = new System.Drawing.Size(174, 23);
+            this.show_schedule_button.Size = new System.Drawing.Size(199, 34);
             this.show_schedule_button.TabIndex = 8;
             this.show_schedule_button.Text = "Show Schedule";
             this.show_schedule_button.UseVisualStyleBackColor = true;
             this.show_schedule_button.Click += new System.EventHandler(this.show_schedule_button_Click);
             // 
-            // button2
+            // postpone_button
             // 
-            this.button2.Location = new System.Drawing.Point(12, 126);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 34);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Postpone";
-            this.button2.UseVisualStyleBackColor = true;
+            this.postpone_button.Location = new System.Drawing.Point(12, 126);
+            this.postpone_button.Name = "postpone_button";
+            this.postpone_button.Size = new System.Drawing.Size(174, 34);
+            this.postpone_button.TabIndex = 12;
+            this.postpone_button.Text = "Postpone";
+            this.postpone_button.UseVisualStyleBackColor = true;
+            this.postpone_button.Click += new System.EventHandler(this.postpone_button_Click);
             // 
-            // button3
+            // cancel_button
             // 
-            this.button3.Location = new System.Drawing.Point(217, 126);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 34);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cancel_button.Location = new System.Drawing.Point(217, 126);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(174, 34);
+            this.cancel_button.TabIndex = 13;
+            this.cancel_button.Text = "Cancel";
+            this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
             // rectangleShape2
             // 
@@ -146,7 +148,7 @@
             // 
             this.appointments_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.appointments_combo.FormattingEnabled = true;
-            this.appointments_combo.Location = new System.Drawing.Point(74, 75);
+            this.appointments_combo.Location = new System.Drawing.Point(144, 7);
             this.appointments_combo.Name = "appointments_combo";
             this.appointments_combo.Size = new System.Drawing.Size(247, 24);
             this.appointments_combo.TabIndex = 2;
@@ -154,21 +156,42 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(104, 15);
+            this.label3.Location = new System.Drawing.Point(7, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 32);
+            this.label3.Size = new System.Drawing.Size(122, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Appointment";
+            // 
+            // newdate
+            // 
+            this.newdate.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.newdate.Location = new System.Drawing.Point(144, 59);
+            this.newdate.Name = "newdate";
+            this.newdate.Size = new System.Drawing.Size(247, 22);
+            this.newdate.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label4.Location = new System.Drawing.Point(12, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 25);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "New Date";
             // 
             // DocSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 580);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.newdate);
+            this.Controls.Add(this.cancel_button);
+            this.Controls.Add(this.postpone_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.show_schedule_button);
             this.Controls.Add(this.label2);
@@ -195,12 +218,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button show_schedule_button;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button postpone_button;
+        private System.Windows.Forms.Button cancel_button;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.ComboBox appointments_combo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker newdate;
+        private System.Windows.Forms.Label label4;
     }
 }
