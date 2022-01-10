@@ -21,6 +21,7 @@ namespace DBapplication
             string query = $"INSERT INTO  Values ();";
             return dbMan.ExecuteNonQuery(query);
         }
+
         public int InsertAperson(string Fname,string LName,string BOD,string Gender)
         {
             string query = $"INSERT INTO Person Values ('{Fname}','{LName}','{BOD}','{Gender}');";
@@ -46,12 +47,14 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+
         public int InsertEmployee(string PersonID, string EmpType, string Salary, string DID )
         {
             string query;
             query = $"INSERT INTO Employee Values ({PersonID},{EmpType},{Salary},{DID});";
             return dbMan.ExecuteNonQuery(query);
         }
+
 
         public int InsertaNurse(string Salary,string PersonID,string SuperID)
         {
@@ -67,19 +70,19 @@ namespace DBapplication
 
         public DataTable LookUpPatient(string Fname, string Lname)
         {
-            string query = $"SELECT P.ID, Pr.FName, Pr.LName, Pr.BoD, Pr.gender FROM Patient as P, Person as Pr Where Pr.FName = '{Fname}' AND Pr.LName = '{Lname}'";
+            string query = $"SELECT P.ID, Pr.FName, Pr.LName, Pr.BoD, Pr.gender FROM Patient as P, Person as Pr Where Pr.FName = '{Fname}' AND Pr.LName = '{Lname}' AND P.PersonID = Pr.ID";
             return dbMan.ExecuteReader(query);
         }
 
 
 
-        public int InsertUser(string pass,string ID, string username,string UserTypeID)
+        public int InsertUser(string pass, string ID, string username, string UserTypeID)
         {
             string query = $"INSERT INTO Users Values ('{pass}',{ID},'{username}',{UserTypeID});";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int InsertAllergy(int patID , string allergy)
+        public int InsertAllergy(int patID, string allergy)
         {
             string query = $"INSERT INTO Patient_allergies Values ({patID},'{allergy}');";
             return dbMan.ExecuteNonQuery(query);
@@ -98,7 +101,7 @@ namespace DBapplication
         }
         public int DeletePatientsRequests(int patid)
         {
-            string query = "DELETE FROM requests WHERE PatientID =  " + patid +";";
+            string query = "DELETE FROM requests WHERE PatientID =  " + patid + ";";
             return dbMan.ExecuteNonQuery(query);
         }
         public int DeletePatientsScans(int patid)
@@ -200,13 +203,13 @@ namespace DBapplication
 
 
 
-        public int UpdateBloodType(int patid , string btype)
+        public int UpdateBloodType(int patid, string btype)
         {
-            string query = "UPDATE Patient SET BloodType = '" +btype+ "' WHERE ID = "+ patid +";";
+            string query = "UPDATE Patient SET BloodType = '" + btype + "' WHERE ID = " + patid + ";";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int UpdateReport(int patid, string report , string appointment)
+        public int UpdateReport(int patid, string report, string appointment)
         {
             string query = "UPDATE Appointment SET Report = '" + report + "' WHERE PatientID = " + patid + " and Date_time = '" + appointment + "';";
             return dbMan.ExecuteNonQuery(query);
@@ -247,14 +250,14 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable checkpass(string pass,string username)
+        public DataTable checkpass(string pass, string username)
         {
             string query = $"SELECT Username FROM Users where passwords='{pass}' AND Username='{username}';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectDocPatient_IDs(int docid)
         {
-            string query = "SELECT ID FROM Patient Where ResDrID =  " + docid ;
+            string query = "SELECT ID FROM Patient Where ResDrID =  " + docid;
             return dbMan.ExecuteReader(query);
         }
 
@@ -263,6 +266,7 @@ namespace DBapplication
             string query = "SELECT * FROM Patient Where ID =  " + patid;
             return dbMan.ExecuteReader(query);
         }
+
 
         public DataTable Checkappointment(int docid , DateTime strt)
         {
@@ -274,10 +278,10 @@ namespace DBapplication
         }
         public DataTable SelectPatientnameanddata(string name , int docid)
         {
-            string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " +docid + " and (FName = '" + name+"' OR LName = '" + name+"' );";
+            string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " + docid + " and (FName = '" + name + "' OR LName = '" + name + "' );";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectallPatientnameanddata( int docid)
+        public DataTable SelectallPatientnameanddata(int docid)
         {
             string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " + docid + " ;";
             return dbMan.ExecuteReader(query);
@@ -349,10 +353,11 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        //public DataTable docSchedule(int id)
-        //{
-
-        //}
+        public DataTable docSchedule(int id)
+        {
+            string query = $"select Date_time, Atype from Appointment where DrID = {id}";
+            return dbMan.ExecuteReader(query); 
+        }
 
         public DataTable SelectPatientPersondata(int patid)
         {
@@ -372,12 +377,12 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable SelectAppointmentsDates(int docid , int patid)
+        public DataTable SelectAppointmentsDates(int docid, int patid)
         {
-            string query = "SELECT Date_time , Report FROM Appointment Where PatientID =  " + patid + " and DrID = "+ docid ;
+            string query = "SELECT Date_time , Report FROM Appointment Where PatientID =  " + patid + " and DrID = " + docid;
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectAppointmentReport(int docid, int patid , string app)
+        public DataTable SelectAppointmentReport(int docid, int patid, string app)
         {
             string query = "SELECT Report FROM Appointment Where PatientID =  " + patid + " and DrID = " + docid + " and Date_time = '" + app + "';";
             return dbMan.ExecuteReader(query);
@@ -412,7 +417,7 @@ namespace DBapplication
         }
         public int getDocID(string username)
         {
-            string query = "SELECT d.ID FROM Doctors as d , Users as u where u.PersonID = d.PersonID and Username = '" + username +"';";
+            string query = "SELECT d.ID FROM Doctors as d , Users as u where u.PersonID = d.PersonID and Username = '" + username + "';";
             return (int)dbMan.ExecuteScalar(query);
         }
         public DataTable SelectAllUserType()
@@ -567,7 +572,7 @@ namespace DBapplication
         }
         public int RequestSuregry(int RoomID, string startDate, string EndDate, int PatientID, int drID)
         {
-            string query = $"update Operations_Requests set Operation_Location = {RoomID}, Starts = '1{startDate}', Ends = '{EndDate}' where Patient_ID = {PatientID} AND Doctor_ID = {drID}";
+            string query = $"update Operations_Requests set Operation_Location = {RoomID}, Starts = '{startDate}', Ends = '{EndDate}' where Patient_ID = {PatientID} AND Doctor_ID = {drID}";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -590,9 +595,10 @@ namespace DBapplication
         }
         public int RequestRoom(int roomID, int nurseID, int PatientID)
         {
-            string query = $"insert into Room_Requests Values ({roomID}, {nurseID}, {PatientID})";
+            string query = $"insert into Room_Requests(Room_ID, Nurse_ID,Patient_ID) Values ({roomID}, {nurseID}, {PatientID})";
             return dbMan.ExecuteNonQuery(query);
         }
+
 
         public int RetrieveCorrespondingNurse(int RoomId)
         {
@@ -603,6 +609,169 @@ namespace DBapplication
         public int RequestScan(int patientId, string date, int scanID)
         {
             string query = $"insert into Scan_Requests(Patient_ID,Datee,Scan_ID) values({patientId}, '{date}', {scanID}) ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable SelectScansIDs()
+        {
+            string query = $"Select ScanRequestID from Scan_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectRoomsIDs()
+        {
+            string query = $"Select RoomRequestID from Room_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectOperationssIDs()
+        {
+            string query = $"Select Operation_ID from Operations_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectAppointmentssIDs()
+        {
+            string query = $"Select AppointmentRequestID from Appointment_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectIDsDrs()
+        {
+            string query = $"Select ID from Doctors;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectIDsNrs()
+        {
+            string query = $"Select ID from Nurse ;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectIDsEmps()
+        {
+            string query = $"Select ID from Employee ;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int UpdateScanAccept(string reqID)
+        {
+            string query = $"UPDATE Scan_Requests SET Accepted = 1 WHERE ScanRequestID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateScanCancel(string reqID)
+        {
+            string query = $"UPDATE Scan_Requests SET Accepted = 0 WHERE ScanRequestID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateRoomAccept(string reqID)
+        {
+            string query = $"UPDATE Room_Requests SET Accepted = 1 WHERE RoomRequestID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateRoomCancel(string reqID)
+        {
+            string query = $"UPDATE Room_Requests SET Accepted = 0 WHERE RoomRequestID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateOperationAccept(string reqID)
+        {
+            string query = $"UPDATE Operations_Requests SET Accepted = 1 WHERE Operation_ID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateOperationCancel(string reqID)
+        {
+            string query = $"UPDATE Operations_Requests SET Accepted = 0 WHERE Operation_ID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateAppointmentAccept(string reqID)
+        {
+            string query = $"UPDATE Appointment_Requests SET Accepted = 1 WHERE AppointmentRequestID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateAppointmentCancel(string reqID)
+        {
+            string query = $"UPDATE Appointment_Requests SET Accepted = 0 WHERE AppointmentRequestID = " + reqID + " ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertApprovedScan(string reqID)
+        {
+            string query = $"INSERT INTO Has_a_scan (PatientID,Date_time,ScanID) Select Patient_ID,Datee,Scan_ID From Scan_Requests WHERE ScanRequestID = " + reqID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertApprovedRoom(string reqID)
+        {
+            string query = $"INSERT INTO Room (ID,ResposibleNurseID,PatientID) Select Room_ID,Nurse_ID,Patient_ID From Room_Requests WHERE RoomRequestID = " + reqID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertApprovedOperation(string reqID)
+        {
+            string query = $"INSERT INTO operations (ID,OLocation,startTime,endTime,PatientID,OTypeID,DoctorID) Select Operation_ID,Operation_Location,Starts,Ends,Patient_ID,Operation_Type,Doctor_ID From Operations_Requests WHERE Operation_ID = " + reqID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertApprovedAppointment(string reqID)
+        {
+            string query = $"INSERT INTO Appointment (PatientID,DrID,Date_time,Atype) Select Patient_ID,Dr_ID,Timee,Appointment_Type From Appointment_Requests WHERE AppointmentRequestID = " + reqID + ";";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable SelectAllScanReq()
+        {
+            string query = $"SELECT * FROM Scan_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectAllRoomReq()
+        {
+            string query = $"SELECT * FROM Room_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectAllOperationReq()
+        {
+            string query = $"SELECT * FROM Operations_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectAllAppointmentReq()
+        {
+            string query = $"SELECT * FROM Appointment_Requests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectAllFnames()
+        {
+            string query = $"SELECT FName FROM Person;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int UpdateDrS(string id,string newS)
+        {
+            string query = $"UPDATE Doctors SET Salary = {newS} WHERE ID = {id} ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateNrS(string id, string newS)
+        {
+            string query = $"UPDATE Nurse SET Salary = {newS} WHERE ID = {id} ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateEmpS(string id, string newS)
+        {
+            string query = $"UPDATE Employee SET Salary = {newS} WHERE ID = {id} ;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable SelectSearch(string fname)
+        {
+            string query = $"SELECT FName,LName,Person.ID,BoD,gender,Tname FROM Person,EmployeeType WHERE FName= '{fname}' AND Person.ID=EmployeeType.ID;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int Updatepayment(string payment,string ay)
+        {
+            string query = $"Update transactions Set Ttype='Deposit', payment= {payment} WHERE requestID={ay};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertScanTransaction(int counter,string reqID)
+        {
+            string query = $"INSERT INTO transactions(ID,requestID) values ({counter},{reqID});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable SelectAlltrans()
+        {
+            string query = $"SELECT requestID FROM transactions;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+        public int RequestAppointment(int patientID, int DrId, string Adate, string Type)
+        {
+            string query = $"insert into Appointment_Requests(Patient_ID,Dr_ID,Timee,Appointment_Type) values({patientID},{DrId},'{Adate}','{Type}')";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -617,6 +786,7 @@ namespace DBapplication
             string query = "select DepID,DepName from Department";
             return dbMan.ExecuteReader(query);
         }
+
 
         public void TerminateConnection()
         {

@@ -73,5 +73,11 @@ namespace DBapplication
             Edit_emp emp = new Edit_emp();
             emp.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Show_stats stats = new Show_stats();
+            stats.Show();
+        }
     }
 }

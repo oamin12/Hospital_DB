@@ -42,7 +42,7 @@ namespace DBapplication
             string StartDate = StartTimePicker.Value.ToString("yyyyMMdd");
             string endDate = EndTimePicker.Value.ToString("yyyyMMdd");
 
-            int r = controllerObj.RequestSuregry(Convert.ToInt32(locationCombo.SelectedValue), StartDate, endDate, Convert.ToInt32(PatientPick_combo.SelectedValue), Convert.ToInt32(DoctroPick_combo.SelectedValue));
+            int r = controllerObj.RequestSuregry(Convert.ToInt32(locationCombo.SelectedValue), StartDate, endDate, Convert.ToInt32(PatientPick_combo.SelectedValue), Convert.ToInt32(((DataRowView)DoctroPick_combo.SelectedValue)["ID"]));
             if(r == 0)
             {
                 MessageBox.Show("Reservation not updated");

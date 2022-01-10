@@ -286,7 +286,7 @@ on update no action
 )
 create table Room_Requests
 (
-Room_ID int IDENTITY(1,1),
+Room_ID int,
 primary key (Room_ID),
 Nurse_ID int,
 Patient_ID int,

@@ -32,10 +32,10 @@ namespace DBapplication
             this.ChooseResTypePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Appointment = new System.Windows.Forms.Button();
             this.BedsButton = new System.Windows.Forms.Button();
             this.ScansButton = new System.Windows.Forms.Button();
             this.SurgeriesButton = new System.Windows.Forms.Button();
-            this.Appointment = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +65,21 @@ namespace DBapplication
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(171, 413);
             this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+     
+            // 
+            // Appointment
+            // 
+            this.Appointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Appointment.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Appointment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Appointment.Location = new System.Drawing.Point(0, 281);
+            this.Appointment.Name = "Appointment";
+            this.Appointment.Size = new System.Drawing.Size(171, 66);
+            this.Appointment.TabIndex = 5;
+            this.Appointment.Text = "Appointment";
+            this.Appointment.UseVisualStyleBackColor = false;
+            this.Appointment.Click += new System.EventHandler(this.Appointment_Click);
             // 
             // BedsButton
             // 
@@ -108,19 +122,6 @@ namespace DBapplication
             this.SurgeriesButton.Text = "Surgeries";
             this.SurgeriesButton.UseVisualStyleBackColor = false;
             this.SurgeriesButton.Click += new System.EventHandler(this.SurgeriesButton_Click);
-            // 
-            // Appointment
-            // 
-            this.Appointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Appointment.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.Appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Appointment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Appointment.Location = new System.Drawing.Point(0, 281);
-            this.Appointment.Name = "Appointment";
-            this.Appointment.Size = new System.Drawing.Size(171, 66);
-            this.Appointment.TabIndex = 5;
-            this.Appointment.Text = "Appointment";
-            this.Appointment.UseVisualStyleBackColor = false;
             // 
             // Reservations_page
             // 

@@ -42,6 +42,7 @@ namespace DBapplication
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.ReserveAppButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,6 @@ namespace DBapplication
             this.DoctroPick_combo.Name = "DoctroPick_combo";
             this.DoctroPick_combo.Size = new System.Drawing.Size(238, 24);
             this.DoctroPick_combo.TabIndex = 19;
-            this.DoctroPick_combo.SelectedIndexChanged += new System.EventHandler(this.DoctroPick_combo_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -129,19 +129,16 @@ namespace DBapplication
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(88, 21);
             this.radioButton1.TabIndex = 25;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Check up";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoCheck = false;
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(321, 219);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(84, 21);
             this.radioButton2.TabIndex = 26;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "follow up";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -165,7 +162,7 @@ namespace DBapplication
             // ReserveAppButton
             // 
             this.ReserveAppButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReserveAppButton.Location = new System.Drawing.Point(325, 323);
+            this.ReserveAppButton.Location = new System.Drawing.Point(148, 323);
             this.ReserveAppButton.Name = "ReserveAppButton";
             this.ReserveAppButton.Size = new System.Drawing.Size(212, 60);
             this.ReserveAppButton.TabIndex = 29;
@@ -173,10 +170,22 @@ namespace DBapplication
             this.ReserveAppButton.UseVisualStyleBackColor = true;
             this.ReserveAppButton.Click += new System.EventHandler(this.ReserveAppButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(568, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(212, 60);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Show schedule";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AppointmentReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ReserveAppButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
@@ -213,5 +222,6 @@ namespace DBapplication
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button ReserveAppButton;
+        private System.Windows.Forms.Button button1;
     }
 }
