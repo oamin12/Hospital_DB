@@ -569,7 +569,7 @@ namespace DBapplication
         }
         public int RequestRoom(int roomID, int nurseID, int PatientID)
         {
-            string query = $"insert into Room_Requests Values ({roomID}, {nurseID}, {PatientID})";
+            string query = $"insert into Room_Requests(Room_ID, Nurse_ID,Patient_ID) Values ({roomID}, {nurseID}, {PatientID})";
             return dbMan.ExecuteNonQuery(query);
         }
 
