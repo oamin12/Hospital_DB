@@ -61,5 +61,9 @@ namespace DBapplication
             }
         }
 
+        private void ROOM_RES_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

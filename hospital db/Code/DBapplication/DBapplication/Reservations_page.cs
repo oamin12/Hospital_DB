@@ -40,10 +40,10 @@ namespace DBapplication
             Surgery_Res Ss = new Surgery_Res();
             AddUserControl(Ss);
         }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void Appointment_Click(object sender, EventArgs e)
         {
-
+            AppointmentReservations AR = new AppointmentReservations();
+            AddUserControl(AR);
         }
     }
 }

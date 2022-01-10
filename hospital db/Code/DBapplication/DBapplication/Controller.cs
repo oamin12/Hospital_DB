@@ -67,7 +67,7 @@ namespace DBapplication
 
         public DataTable LookUpPatient(string Fname, string Lname)
         {
-            string query = $"SELECT P.ID, Pr.FName, Pr.LName, Pr.BoD, Pr.gender FROM Patient as P, Person as Pr Where Pr.FName = '{Fname}' AND Pr.LName = '{Lname}'";
+            string query = $"SELECT P.ID, Pr.FName, Pr.LName, Pr.BoD, Pr.gender FROM Patient as P, Person as Pr Where Pr.FName = '{Fname}' AND Pr.LName = '{Lname}' AND P.PersonID = Pr.ID";
             return dbMan.ExecuteReader(query);
         }
 
@@ -251,6 +251,15 @@ namespace DBapplication
             string query = "SELECT * FROM Patient Where ID =  " + patid;
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable Checkappointment(int docid , DateTime strt)
+        {
+            string StoredProcedureName = StoredProcedures.getappointment;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@@appdate", strt);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
         public DataTable SelectPatientnameanddata(string name , int docid)
         {
             string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " +docid + " and (FName = '" + name+"' OR LName = '" + name+"' );";
@@ -261,7 +270,9 @@ namespace DBapplication
             string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " + docid + " ;";
             return dbMan.ExecuteReader(query);
         }
-
+        ///
+       
+        ///////stored proc
         public DataTable SelectPatientsnames(int docid)
         {
             string StoredProcedureName = StoredProcedures.getdrpatients;
@@ -280,16 +291,47 @@ namespace DBapplication
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
 
         }
+
+        public DataTable checkappointmentandDr(int docid, string strt)
+        {
+            string query = "select * from Appointment  where DrID =   " + docid + "and Date_time = '"+ strt + "';";
+            return dbMan.ExecuteReader(query);
+
+        }
+
+        public int updateappoint(int docid, DateTime oldapp , DateTime newapp)
+        {
+            string StoredProcedureName = StoredProcedures.updateappoint;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@newdate", newapp);
+            Parameters.Add("@olddate", oldapp);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+
+        }
+
+        public int cancelappointment(int docid, DateTime oldapp)
+        {
+            string StoredProcedureName = StoredProcedures.cancelappoint;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@appdate", oldapp);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+
+        }
+
+
         public DataTable selectappointments(int docid)
         {
             string query = "select Date_time from Appointment  where DrID =   "+ docid+ ";";
             return dbMan.ExecuteReader(query);
         }
 
-        //public DataTable docSchedule(int id)
-        //{
-
-        //}
+        public DataTable docSchedule(int id)
+        {
+            string query = $"select Date_time, Atype from Appointment where DrID = {id}";
+            return dbMan.ExecuteReader(query); 
+        }
 
         public DataTable SelectPatientPersondata(int patid)
         {
@@ -504,7 +546,7 @@ namespace DBapplication
         }
         public int RequestSuregry(int RoomID, string startDate, string EndDate, int PatientID, int drID)
         {
-            string query = $"update Operations_Requests set Operation_Location = {RoomID}, Starts = '1{startDate}', Ends = '{EndDate}' where Patient_ID = {PatientID} AND Doctor_ID = {drID}";
+            string query = $"update Operations_Requests set Operation_Location = {RoomID}, Starts = '{startDate}', Ends = '{EndDate}' where Patient_ID = {PatientID} AND Doctor_ID = {drID}";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -527,7 +569,7 @@ namespace DBapplication
         }
         public int RequestRoom(int roomID, int nurseID, int PatientID)
         {
-            string query = $"insert into Room_Requests Values ({roomID}, {nurseID}, {PatientID})";
+            string query = $"insert into Room_Requests(Room_ID, Nurse_ID,Patient_ID) Values ({roomID}, {nurseID}, {PatientID})";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -540,6 +582,12 @@ namespace DBapplication
         public int RequestScan(int patientId, string date, int scanID)
         {
             string query = $"insert into Scan_Requests(Patient_ID,Datee,Scan_ID) values({patientId}, '{date}', {scanID}) ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int RequestAppointment(int patientID, int DrId, string Adate, string Type)
+        {
+            string query = $"insert into Appointment_Requests(Patient_ID,Dr_ID,Timee,Appointment_Type) values({patientID},{DrId},'{Adate}','{Type}')";
             return dbMan.ExecuteNonQuery(query);
         }
 

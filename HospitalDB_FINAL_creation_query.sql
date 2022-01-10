@@ -276,7 +276,7 @@ PatientID int,
 DrID int default -1,
 Date_time datetime,
 Atype varchar(50),
-primary key (PatientID,DrID,Date_time),
+primary key (DrID,Date_time),
 foreign key (PatientID) references Patient
 on delete cascade
 on update cascade,
@@ -286,7 +286,7 @@ on update no action
 )
 create table Room_Requests
 (
-Room_ID int IDENTITY(1,1),
+Room_ID int,
 primary key (Room_ID),
 Nurse_ID int,
 Patient_ID int,

@@ -17,7 +17,7 @@ namespace DBapplication
         {
             myID = ID;
             InitializeComponent();
-            controllerobj = c;
+            controllerobj = new Controller();
         }
 
         private void Find_Patient_Load(object sender, EventArgs e)

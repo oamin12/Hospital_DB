@@ -25,6 +25,16 @@ namespace DBapplication
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+
+            if (FnameText.Text == "" || LnameText.Text == "")
+            {
+                MessageBox.Show("Please enter full name");
+            }
+            else if (int.TryParse(FnameText.Text, out _) || int.TryParse(LnameText.Text, out _))
+            {
+                MessageBox.Show("Please enter appropriate alphabetical name");
+            }
+
             DataTable dt = controllerObj.LookUpPatient(FnameText.Text.ToString(), LnameText.Text.ToString());
             ShowPatient.DataSource = dt;
             ShowPatient.Refresh();

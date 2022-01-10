@@ -98,6 +98,30 @@
     <Compile Include="Adminstration.Designer.cs">
       <DependentUpon>Adminstration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Doctor.Designer.cs">
+      <DependentUpon>Edit_Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_emp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_emp.Designer.cs">
+      <DependentUpon>Edit_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Nurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Nurse.Designer.cs">
+      <DependentUpon>Edit_Nurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_User.Designer.cs">
+      <DependentUpon>Edit_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Find_Patient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +184,7 @@
     <EmbeddedResource Include="Add_Nurse.resx">
       <DependentUpon>Add_Nurse.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="StoredProcedures.cs" />
     <Compile Include="Surgery_Res.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +202,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adminstration.resx">
       <DependentUpon>Adminstration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Doctor.resx">
+      <DependentUpon>Edit_Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_emp.resx">
+      <DependentUpon>Edit_emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Nurse.resx">
+      <DependentUpon>Edit_Nurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_User.resx">
+      <DependentUpon>Edit_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Find_Patient.resx">
       <DependentUpon>Find_Patient.cs</DependentUpon>

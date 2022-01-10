@@ -19,7 +19,7 @@ namespace DBapplication
         public DocForm(int ID , Controller c)
         {
             myID = ID;
-            controllerobj = c;
+            controllerobj = new Controller();
             InitializeComponent();
         }
 
@@ -211,7 +211,6 @@ namespace DBapplication
             if (String.IsNullOrEmpty(asd)) { MessageBox.Show("No patient Choosed"); return; }
 
             int.TryParse(asd, out patid);
-            controllerobj.DeletePatientsRequests(patid);
             controllerobj.DeletePatientsAppointments(patid);
             controllerobj.DeletePatientsOperations(patid);
             controllerobj.DeletePatientsScans(patid);
