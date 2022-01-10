@@ -16,9 +16,28 @@ namespace DBapplication
             InitializeComponent();
         }
 
-        private void ReqBtn_Click(object sender, EventArgs e)
+        private void RequestsBtn_Click(object sender, EventArgs e)
         {
+            Requests open = new Requests();
+            open.Show();
+        }
 
+        private void MoneyBtn_Click(object sender, EventArgs e)
+        {
+            Transactions openTany = new Transactions();
+            openTany.Show();
+        }
+
+        private void SalaryBtn_Click(object sender, EventArgs e)
+        {
+            Salaries ana3ayzSALARY = new Salaries();
+            ana3ayzSALARY.Show();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            Search_Staff src = new Search_Staff();
+            src.Show();
         }
     }
 }
