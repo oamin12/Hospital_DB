@@ -59,8 +59,6 @@
             this.PatientSearch = new System.Windows.Forms.Button();
             this.Dismiss_Patient_button = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.patblood = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Pat_DOB = new System.Windows.Forms.Label();
@@ -357,24 +355,6 @@
             this.button8.Text = "Request Surgery";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(403, 529);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(121, 28);
-            this.button9.TabIndex = 35;
-            this.button9.Text = "Request a scan";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(599, 529);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(121, 28);
-            this.button10.TabIndex = 36;
-            this.button10.Text = "Request a room";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // patblood
             // 
             this.patblood.AutoSize = true;
@@ -412,8 +392,6 @@
             this.Controls.Add(this.Pat_DOB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.patblood);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.Dismiss_Patient_button);
             this.Controls.Add(this.PatientSearch);
@@ -486,8 +464,6 @@
         private System.Windows.Forms.Button PatientSearch;
         private System.Windows.Forms.Button Dismiss_Patient_button;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label patblood;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Pat_DOB;

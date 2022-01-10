@@ -172,6 +172,15 @@ namespace DBapplication
             string query = "SELECT * FROM Patient Where ID =  " + patid;
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable Checkappointment(int docid , DateTime strt)
+        {
+            string StoredProcedureName = StoredProcedures.getappointment;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@@appdate", strt);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
         public DataTable SelectPatientnameanddata(string name , int docid)
         {
             string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " +docid + " and (FName = '" + name+"' OR LName = '" + name+"' );";
@@ -182,7 +191,9 @@ namespace DBapplication
             string query = "select Distinct  pat.ID , p.FName , p.LName , p.BoD , p.gender from Person as p , Patient pat where pat.PersonID = p.ID and pat.ResDrID = " + docid + " ;";
             return dbMan.ExecuteReader(query);
         }
-
+        ///
+       
+        ///////stored proc
         public DataTable SelectPatientsnames(int docid)
         {
             string StoredProcedureName = StoredProcedures.getdrpatients;
@@ -201,6 +212,36 @@ namespace DBapplication
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
 
         }
+
+        public DataTable checkappointmentandDr(int docid, string strt)
+        {
+            string query = "select * from Appointment  where DrID =   " + docid + "and Date_time = '"+ strt + "';";
+            return dbMan.ExecuteReader(query);
+
+        }
+
+        public int updateappoint(int docid, DateTime oldapp , DateTime newapp)
+        {
+            string StoredProcedureName = StoredProcedures.updateappoint;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@newdate", newapp);
+            Parameters.Add("@olddate", oldapp);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+
+        }
+
+        public int cancelappointment(int docid, DateTime oldapp)
+        {
+            string StoredProcedureName = StoredProcedures.cancelappoint;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@appdate", oldapp);
+            Parameters.Add("@docid", docid);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+
+        }
+
+
         public DataTable selectappointments(int docid)
         {
             string query = "select Date_time from Appointment  where DrID =   "+ docid+ ";";
