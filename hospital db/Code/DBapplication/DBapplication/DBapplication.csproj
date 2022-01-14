@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting.Designer.cs">
+      <DependentUpon>Accounting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add a Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,12 @@
     <Compile Include="Reception.Designer.cs">
       <DependentUpon>Reception.cs</DependentUpon>
     </Compile>
+    <Compile Include="Requests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requests.Designer.cs">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservations_page.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,11 +170,29 @@
     <Compile Include="ROOM_RES.Designer.cs">
       <DependentUpon>ROOM_RES.cs</DependentUpon>
     </Compile>
+    <Compile Include="Salaries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salaries.Designer.cs">
+      <DependentUpon>Salaries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scan_Res.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Scan_Res.Designer.cs">
       <DependentUpon>Scan_Res.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Staff.Designer.cs">
+      <DependentUpon>Search_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_stats.Designer.cs">
+      <DependentUpon>Show_stats.cs</DependentUpon>
     </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
@@ -172,6 +202,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions.Designer.cs">
+      <DependentUpon>Transactions.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounting.resx">
+      <DependentUpon>Accounting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add a Doctor.resx">
       <DependentUpon>Add a Doctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,14 +266,26 @@
     <EmbeddedResource Include="Reception.resx">
       <DependentUpon>Reception.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Requests.resx">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservations_page.resx">
       <DependentUpon>Reservations_page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ROOM_RES.resx">
       <DependentUpon>ROOM_RES.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Salaries.resx">
+      <DependentUpon>Salaries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scan_Res.resx">
       <DependentUpon>Scan_Res.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Staff.resx">
+      <DependentUpon>Search_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_stats.resx">
+      <DependentUpon>Show_stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -250,6 +301,9 @@
     </Compile>
     <EmbeddedResource Include="Surgery_Res.resx">
       <DependentUpon>Surgery_Res.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions.resx">
+      <DependentUpon>Transactions.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

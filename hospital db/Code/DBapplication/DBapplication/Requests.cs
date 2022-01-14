@@ -58,8 +58,7 @@ namespace DBapplication
             {
                 MessageBox.Show("The scan request is approved and sent to the [Has_a_scan] table successfully!");
             }
-            int c = 0;
-            int result3 = controllerObj.InsertScanTransaction(c++,comboBox_scan.Text);
+            int result3 = controllerObj.InsertScanTransaction(comboBox_scan.Text);
         }
 
         private void CancelScan_Click(object sender, EventArgs e)
@@ -94,8 +93,8 @@ namespace DBapplication
             {
                 MessageBox.Show("The room request is approved and sent to the [Room] table successfully!");
             }
-            int c = 0;
-            int result3 = controllerObj.InsertScanTransaction(c++, comboBox_room.Text);
+            
+            int result3 = controllerObj.InsertScanTransaction(comboBox_room.Text);
         }
 
         private void CancelRoom_Click(object sender, EventArgs e)
@@ -135,8 +134,8 @@ namespace DBapplication
             {
                 MessageBox.Show("The operation request is approved and sent to the [operations] table successfully!");
             }
-            int c = 0;
-            int result3 = controllerObj.InsertScanTransaction(c++, comboBox_operation.Text);
+            
+            int result3 = controllerObj.InsertScanTransaction(comboBox_operation.Text);
         }
 
         private void CancelOperation_Click(object sender, EventArgs e)
@@ -171,8 +170,8 @@ namespace DBapplication
             {
                 MessageBox.Show("The appointment request is approved and sent to the [Appointment] table successfully!");
             }
-            int c = 0;
-            int result3 = controllerObj.InsertScanTransaction(c++, comboBox_appointment.Text);
+            //int c = 0;
+            int result3 = controllerObj.InsertScanTransaction(comboBox_appointment.Text);
         }
 
         private void CancelAppointment_Click(object sender, EventArgs e)

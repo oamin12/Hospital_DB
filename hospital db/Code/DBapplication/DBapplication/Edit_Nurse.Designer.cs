@@ -175,6 +175,7 @@ namespace DBapplication
             this.txtbox_Lname.Name = "txtbox_Lname";
             this.txtbox_Lname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Lname.TabIndex = 25;
+            this.txtbox_Lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Lname_KeyPress);
             // 
             // txtbox_Fname
             // 
@@ -182,6 +183,7 @@ namespace DBapplication
             this.txtbox_Fname.Name = "txtbox_Fname";
             this.txtbox_Fname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Fname.TabIndex = 24;
+            this.txtbox_Fname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Fname_KeyPress);
             // 
             // btn_show
             // 

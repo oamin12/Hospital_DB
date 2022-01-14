@@ -44,7 +44,7 @@ namespace DBapplication
                 MessageBox.Show("Failed! Salary should be positive integer and no blank entries are allowed");
             else
             {
-                int result = controllerObj.UpdateDrS(comboBox_DrS.Text, textBox_DrS.Text);
+                int result = controllerObj.UpdateDrSS(comboBox_DrS.Text, textBox_DrS.Text);
                 if (result == 0)
                 {
                     MessageBox.Show("Updating Salary failed");

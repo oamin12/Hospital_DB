@@ -127,5 +127,17 @@ namespace DBapplication
             }
 
         }
+
+        private void txtbox_Fname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cr = e.KeyChar;
+            if (!char.IsLetter(cr) && cr != 8 && cr != 46) { e.Handled = true; }
+        }
+
+        private void txtbox_Lname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cr = e.KeyChar;
+            if (!char.IsLetter(cr) && cr != 8 && cr != 46) { e.Handled = true; }
+        }
     }
 }

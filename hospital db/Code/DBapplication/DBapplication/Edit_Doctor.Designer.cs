@@ -45,8 +45,8 @@ namespace DBapplication
             this.cmbo_drID = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -120,6 +120,7 @@ namespace DBapplication
             this.txtbox_Lname.Name = "txtbox_Lname";
             this.txtbox_Lname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Lname.TabIndex = 25;
+            this.txtbox_Lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Lname_KeyPress);
             // 
             // txtbox_Fname
             // 
@@ -127,6 +128,7 @@ namespace DBapplication
             this.txtbox_Fname.Name = "txtbox_Fname";
             this.txtbox_Fname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Fname.TabIndex = 24;
+            this.txtbox_Fname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Fname_KeyPress);
             // 
             // btn_chngDr
             // 
@@ -205,15 +207,6 @@ namespace DBapplication
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 134);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 17);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Department";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -222,6 +215,15 @@ namespace DBapplication
             this.label5.Size = new System.Drawing.Size(67, 17);
             this.label5.TabIndex = 34;
             this.label5.Text = "Doctor ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 134);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 17);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Department";
             // 
             // Edit_Doctor
             // 

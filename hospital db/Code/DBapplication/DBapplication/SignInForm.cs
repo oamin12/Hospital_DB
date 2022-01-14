@@ -62,11 +62,11 @@ namespace DBapplication
                 Reception rec = new Reception();
                 rec.Show();
             }
-            //if (usertype == 3)
-            //{
-            //    Accounting acc = new Accounting();
-            //    acc.Show();
-            //}
+            if (usertype == 3)
+            {
+                Accounting acc = new Accounting();
+                acc.Show();
+            }
             if (usertype == 4)
             {
                 Adminstration admin = new Adminstration();

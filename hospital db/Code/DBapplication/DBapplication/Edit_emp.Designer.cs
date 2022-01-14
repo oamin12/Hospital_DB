@@ -30,7 +30,9 @@ namespace DBapplication
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btn_chngNurse = new System.Windows.Forms.Button();
+            this.cmbo_Dep = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbox_Lname = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@ namespace DBapplication
             this.btn_show = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbo_Dep = new System.Windows.Forms.ComboBox();
             this.cmbo_EmpID = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -61,6 +61,15 @@ namespace DBapplication
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 155);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 17);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Department";
+            // 
             // btn_chngNurse
             // 
             this.btn_chngNurse.Location = new System.Drawing.Point(8, 248);
@@ -70,6 +79,14 @@ namespace DBapplication
             this.btn_chngNurse.Text = "Change Employees Data";
             this.btn_chngNurse.UseVisualStyleBackColor = true;
             this.btn_chngNurse.Click += new System.EventHandler(this.btn_chngNurse_Click);
+            // 
+            // cmbo_Dep
+            // 
+            this.cmbo_Dep.FormattingEnabled = true;
+            this.cmbo_Dep.Location = new System.Drawing.Point(6, 175);
+            this.cmbo_Dep.Name = "cmbo_Dep";
+            this.cmbo_Dep.Size = new System.Drawing.Size(171, 24);
+            this.cmbo_Dep.TabIndex = 38;
             // 
             // label3
             // 
@@ -95,6 +112,7 @@ namespace DBapplication
             this.txtbox_Lname.Name = "txtbox_Lname";
             this.txtbox_Lname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Lname.TabIndex = 25;
+            this.txtbox_Lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Lname_KeyPress);
             // 
             // txtbox_Fname
             // 
@@ -102,6 +120,8 @@ namespace DBapplication
             this.txtbox_Fname.Name = "txtbox_Fname";
             this.txtbox_Fname.Size = new System.Drawing.Size(169, 22);
             this.txtbox_Fname.TabIndex = 24;
+            this.txtbox_Fname.TextChanged += new System.EventHandler(this.txtbox_Fname_TextChanged);
+            this.txtbox_Fname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Fname_KeyPress);
             // 
             // btn_show
             // 
@@ -132,23 +152,6 @@ namespace DBapplication
             this.label1.Size = new System.Drawing.Size(228, 32);
             this.label1.TabIndex = 46;
             this.label1.Text = "Edit an Employee";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 155);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 17);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Department";
-            // 
-            // cmbo_Dep
-            // 
-            this.cmbo_Dep.FormattingEnabled = true;
-            this.cmbo_Dep.Location = new System.Drawing.Point(6, 175);
-            this.cmbo_Dep.Name = "cmbo_Dep";
-            this.cmbo_Dep.Size = new System.Drawing.Size(171, 24);
-            this.cmbo_Dep.TabIndex = 38;
             // 
             // cmbo_EmpID
             // 

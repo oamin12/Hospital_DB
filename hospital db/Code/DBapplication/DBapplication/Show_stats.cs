@@ -17,9 +17,7 @@ namespace DBapplication
         public Show_stats()
         {
             InitializeComponent();
-            DataTable dt = controllerObj.SelectAllDeps();
-            cmbo_Dep.DataSource = dt;
-            cmbo_Dep.DisplayMember = "DepName";
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
